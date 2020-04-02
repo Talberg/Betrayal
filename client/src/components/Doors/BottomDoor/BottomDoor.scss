@@ -1,0 +1,17 @@
+.bottomDoor{
+ border-color: black;
+ position: relative;
+ 
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: .2in;
+    border-color: #007bff transparent transparent transparent;
+    z-index: 1003;
+    background-color:transparent;
+
+}
+.trblB{
+    right:-0.15in;
+    top:-0.1in;
+}
