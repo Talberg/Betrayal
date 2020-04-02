@@ -8,7 +8,7 @@ function GroundFloor(props){
 
     return(
        <><div id='groundFloor' className='groundFloor'>
-           <Start />
+    
 
        </div>
     </>)

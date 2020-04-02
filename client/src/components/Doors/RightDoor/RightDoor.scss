@@ -1,0 +1,18 @@
+.rightDoor{
+    position: relative;
+    // right:-.75in;
+    // top:-0.2in;
+       width: 0;
+       height: 0;
+       border-style: solid;
+       border-width: .2in;
+       border-color: transparent transparent transparent #007bff;;
+       z-index: 1003;
+       background-color:transparent;
+ 
+
+}
+.trblR{
+    right:-.75in;
+    top:-0.2in;
+}
