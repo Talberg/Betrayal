@@ -7,7 +7,7 @@
        border-style: solid;
        border-width: .2in;
        border-color: transparent transparent transparent #007bff;;
-       z-index: 1003;
+       z-index: 10000;
        background-color:transparent;
  
 
@@ -15,4 +15,21 @@
 .trblR{
     right:-.75in;
     top:-0.2in;
+}
+.rblR{
+    right:-.75in;
+    top:.19in;
+}
+
+.trlR{
+    right:-.7in;
+    top:-0.2in;
+}
+.trbR{
+    right:-.75in;
+    top:-0.2in;
+}
+.trR{
+    right:-.75in;
+    top:-0.2in; 
 }
