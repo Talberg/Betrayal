@@ -1,0 +1,13 @@
+.leftDoor{
+ position: relative;
+ left:-.2in;
+ top:.2in;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: .2in .2in .2in 0;
+    border-color: transparent #007bff transparent transparent;
+    z-index: 1003;
+    background-color:transparent;
+
+}
