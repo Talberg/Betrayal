@@ -7,8 +7,12 @@ import BottomDoor from '../Doors/BottomDoor/BottomDoor'
 import TopDoor from '../Doors/TopDoor/TopDoor'
 
 function Room(props) {
-    console.log('Room Props')
-    console.log(props)
+   
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
+
 
     function pickRoom() {
         switch (props.doors) {
@@ -62,6 +66,39 @@ function Room(props) {
                 <LeftDoor doors={props.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
             </div>);
             case 'trbl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>>
+                <TopDoor doors={props.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
+                <RightDoor doors={props.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
+                <BottomDoor doors={props.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
+                <LeftDoor doors={props.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+            </div>);
+            // eslint-disable-next-line default-case
+            case 2: switch (props.room.entry) {
+                case 'r':
+                    let rArray = ['rl', 'rb', 'tr']
+
+                    // eslint-disable-next-line default-case
+                    switch (rArray[getRandomInt(3)]) {
+                        case 'rl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
+                            <RightDoor doors='rl' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
+                            <LeftDoor doors='rl' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        </div>);
+                        case 'rb': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
+                            <RightDoor doors='rb' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
+                            <BottomDoor doors='rb' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
+                        </div>);
+                        case 'tr' : return (<div className={`${props.x} ${props.color} room ${props.y}`}>
+                        <TopDoor doors='tr' rooms='tr' changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
+                        <RightDoor doors='tr' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
+                    </div>);
+
+                    };
+                case 't': return ('allt cases');
+                case 'b': return ('all b cases ');
+                case 'l': return ('all l cases');
+
+            };
+            // eslint-disable-next-line no-fallthrough
+            case 4: return (<div className={`${props.x} ${props.color} room ${props.y}`}>>
                 <TopDoor doors={props.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                 <RightDoor doors={props.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                 <BottomDoor doors={props.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
