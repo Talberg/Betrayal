@@ -12,16 +12,19 @@ function TopDoor(props){
         let X = parseInt(splitX[1])
         let newY =`y${Y-1}`
         const newRoom = (`x${X}${newY}`)
+        console.log(props)
         let opened = props.rooms.GroundFloor[newRoom]
         
         console.log(newRoom)
         const setRooms = props.changeState
 
         const GroundFloor = props.rooms.GroundFloor
-const roomStuff = GroundFloor[newRoom]
-console.log(opened)
+        const roomStuff = GroundFloor[newRoom]
+        console.log(opened)
         
 if (!opened.open){
+
+    console.log('click:')
     randomGroundFloor(props)
 }
 
@@ -33,11 +36,16 @@ if (!opened.open){
             const doors = props.rooms.doors
             const GroundFloor = props.rooms.GroundFloor
             const roomStuff = GroundFloor[newRoom]
-            let max = Object.keys(props.rooms.GroundFloorRooms).length
+            let max = Object.keys(props.rooms.GroundFloorRooms).length-1
             let newRoomIndex = getRandomInt(max)
             let index = props.rooms.GroundFloorRooms
             let Array = props.rooms.GroundFloorRoomsArray
             let newRoomObject = index[Array[newRoomIndex]]
+            console.log(` max :${max}`)
+            console.log(`Array${Array}`)
+            console.log(newRoomIndex)
+            console.log(GroundFloor)
+            console.log(newRoomObject)
             console.log(newRoomObject)
 
 

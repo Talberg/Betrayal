@@ -5,6 +5,7 @@ import LeftDoor from '../Doors/LeftDoor/LeftDoor'
 import RightDoor from '../Doors/RightDoor/RightDoor'
 import BottomDoor from '../Doors/BottomDoor/BottomDoor'
 import TopDoor from '../Doors/TopDoor/TopDoor'
+import RoomName from '../RoomName/RoomName'
 
 function Room(props) {
    
@@ -87,7 +88,7 @@ function Room(props) {
                             <BottomDoor doors='rb' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
                         </div>);
                         case 'tr' : return (<div className={`${props.x} ${props.color} room ${props.y}`}>
-                        <TopDoor doors='tr' rooms='tr' changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
+                        <TopDoor doors='tr' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <RightDoor doors='tr' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                     </div>);
 

@@ -27,6 +27,7 @@ function RightDoor(props) {
 
 
         if (!opened.open){
+            console.log('click:')
             randomGroundFloor(props, newX)
         }
 

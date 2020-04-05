@@ -1821,7 +1821,7 @@ function Game(props) {
 
         },
         GroundFloorRoomsArray:[
-           ' AbandonedRoom',
+           'AbandonedRoom',
             'BallRoom',
             'BloodyRoom',
             'CharedRoom',
@@ -1840,7 +1840,17 @@ function Game(props) {
             'CoalChute',
             'Chapel',
             'Conservatory',
-            'Graveyard']
+            'Graveyard'],
+        players:{
+            player1:{
+                username:'',
+                _id:'',
+                location:'x7y5',
+                coor:'x7y5',
+                speed: 1000
+
+                
+            }      }
     })
 
     useEffect(() => {
