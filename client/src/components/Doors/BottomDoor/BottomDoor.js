@@ -15,8 +15,11 @@ function BottomDoor(props){
         const setRooms = props.changeState
         const open = props.rooms.open
         const doors = props.rooms.doors
+        const GroundFloor = props.rooms.GroundFloor
+        const roomStuff = GroundFloor[newRoom]
+
         console.log(doors)
-        setRooms({open:{...open,[newRoom]:true },doors:{...doors}})
+        setRooms({GroundFloor:{...GroundFloor,[newRoom]:{...roomStuff,open:true} },doors:{...doors}})
         
         
         
@@ -27,7 +30,7 @@ function BottomDoor(props){
             }
 
 
-    return (<><button onClick={goUp} className={`bottomDoor ${props.doors}B`} ></button></>)
+    return (<><button onClick={goUp} className={`bottomDoor B${props.doors}`} ></button></>)
 }
 
 export default BottomDoor

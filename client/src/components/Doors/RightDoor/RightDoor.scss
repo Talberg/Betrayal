@@ -7,12 +7,41 @@
        border-style: solid;
        border-width: .2in;
        border-color: transparent transparent transparent #007bff;;
-       z-index: 1003;
+       z-index: 10000;
        background-color:transparent;
  
 
 }
-.trblR{
+.Rtrbl{
     right:-.75in;
     top:-0.2in;
+}
+.R4{
+    right:-.75in;
+    top:-0.2in;
+}
+.Rrbl{
+    right:-.75in;
+    top:.19in;
+}
+
+.Rtrl{
+    right:-.7in;
+    top:-0.2in;
+}
+.Rtrb{
+    right:-.75in;
+    top:-0.2in;
+}
+.Rtr{
+    right:-.75in;
+    top:-0.2in; 
+}
+.Rrl{
+    right:-.70in;
+    top:.190in
+}
+.Rrb{
+    right:-.7in;
+    top:.2in
 }
