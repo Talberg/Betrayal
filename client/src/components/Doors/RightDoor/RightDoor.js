@@ -2,6 +2,7 @@ import React from 'react'
 import './RightDoor.scss'
 
 function RightDoor(props) {
+    let player = props.rooms.players.player1.location === props.location
 
     function goRight() {
         function getRandomInt(max) {
@@ -35,6 +36,9 @@ function RightDoor(props) {
 
         function randomGroundFloor(props) {
 
+            let rArray = ['rl', 'rb', 'tr']
+            let doorString = rArray[getRandomInt(3)]
+
            
             const setRooms = props.changeState
             const doors = props.rooms.doors
@@ -51,22 +55,21 @@ function RightDoor(props) {
 
 
 
-
-
-
-
-
-
             setRooms({
-                ...props.rooms, GroundFloor: {
+                ...props.rooms, open: {
+                    ...props.rooms.open, [newRoom]: true
+                },
+                players:{player1:{location:newRoom}},
+                GroundFloor: {
                     ...GroundFloor, [newRoom]: {
                         ...roomStuff,
                         open: true,
                         doors: newRoomObject.doors,
                         name: newRoomObject.name,
-                        entry:'r'
+                        entry: 'r'
                     }
-                }, doors: { ...doors }
+                },
+                doors: { ...doors, [newRoom]: [doorString] }
             })
 
         }
@@ -76,9 +79,8 @@ function RightDoor(props) {
 
 
 
-
     }
-    return (<><button onClick={goRight} className={`rightDoor R${props.doors}`} ></button></>)
+    return (<>{player ? <><button disabled={false} onClick={goRight} className={`rightDoor R${props.doors}`} ></button> </> : <></>}</>)
 }
 
 export default RightDoor
