@@ -27,16 +27,42 @@ function TopDoor(props){
         
 if (!opened.open){
 
-    console.log('click:')
+  
     randomGroundFloor(props)
+}
+else{
+moveUp(props)
+    
+}
+function moveUp (props){
+         
+    const setRooms = props.changeState
+    const doors = props.rooms.doors
+    const GroundFloor = props.rooms.GroundFloor
+    const roomStuff = GroundFloor[newRoom]
+    let max = Object.keys(props.rooms.GroundFloorRooms).length - 1
+    let newRoomIndex = getRandomInt(max)
+    let index = props.rooms.GroundFloorRooms
+    let Array = props.rooms.GroundFloorRoomsArray
+    let newRoomObject = index[Array[newRoomIndex]]
+    setRooms({
+        ...props.rooms, 
+        players:{player1:{location:newRoom}},
+    
+      
+    })
+
+
 }
 
 
         function randomGroundFloor(props) {
 
 
-            let rArray = ['rl', 'rb', 'tr']
-            let doorString = rArray[getRandomInt(3)]
+            let rArray2 = ['bl', 'tb', 'rb']
+            let rArray3 = ['rbl', 'tbl', 'trb']
+            let doorString2 = rArray2[getRandomInt(3)]
+            let doorString3= rArray3[getRandomInt(3)]
            
             const setRooms = props.changeState
             const doors = props.rooms.doors
@@ -55,6 +81,93 @@ if (!opened.open){
             console.log(newRoomObject)
 
 
+            if(newRoomObject.doors === 1) {
+                let newDoors = 'b'
+               
+                setRooms({
+                 ...props.rooms, open: {
+                     ...props.rooms.open, [newRoom]: true
+                 },
+                 players:{player1:{location:newRoom}},
+                 GroundFloor: {
+                     ...GroundFloor, [newRoom]: {
+                         ...roomStuff,
+                         open: true,
+                         numDoors: newRoomObject.doors,
+                         doors: newDoors,
+                         name: newRoomObject.name,
+                         entry: 'b'
+            
+                     }
+                 },
+                 doors: { ...doors, [newRoom]: [newDoors] }
+             })
+            }
+            else if (newRoomObject.doors=== 2){
+                
+             setRooms({
+                 ...props.rooms, open: {
+                     ...props.rooms.open, [newRoom]: true
+                 },
+                 players:{player1:{location:newRoom}},
+                 GroundFloor: {
+                     ...GroundFloor, [newRoom]: {
+                         ...roomStuff,
+                         open: true,
+                         numDoors: newRoomObject.doors,
+                         doors: doorString2,
+                         name: newRoomObject.name,
+                         entry: 'b'
+            
+                     }
+                 },
+                 doors: { ...doors, [newRoom]: [doorString2] }
+             })
+            }
+            else if ( newRoomObject.doors===3){
+            
+             
+            
+             setRooms({
+                 ...props.rooms, open: {
+                     ...props.rooms.open, [newRoom]: true
+                 },
+                 players:{player1:{location:newRoom}},
+                 GroundFloor: {
+                     ...GroundFloor, [newRoom]: {
+                         ...roomStuff,
+                         open: true,
+                         numDoors: newRoomObject.doors,
+                         doors: doorString3,
+                         name: newRoomObject.name,
+                         entry: 'b'
+            
+                     }
+                 },
+                 doors: { ...doors, [newRoom]: [doorString3] }
+             })
+            }
+            else{
+             setRooms({
+                 ...props.rooms, open: {
+                     ...props.rooms.open, [newRoom]: true
+                 },
+                 players:{player1:{location:newRoom}},
+                 GroundFloor: {
+                     ...GroundFloor, [newRoom]: {
+                         ...roomStuff,
+                         open: true,
+                         numDoors: 4,
+                         doors: 'trbl',
+                         name: newRoomObject.name,
+                         entry: 'b'
+            
+                     }
+                 },
+                 doors: { ...doors, [newRoom]: [doorString3] }
+             })
+            
+            }
 
 
 
@@ -62,22 +175,9 @@ if (!opened.open){
 
 
 
-            setRooms({
-                ...props.rooms, open: {
-                    ...props.rooms.open, [newRoom]: true
-                },
-                players:{player1:{location:newRoom}},
-                GroundFloor: {
-                    ...GroundFloor, [newRoom]: {
-                        ...roomStuff,
-                        open: true,
-                        doors: newRoomObject.doors,
-                        name: newRoomObject.name,
-                        entry: 'r'
-                    }
-                },
-                doors: { ...doors, [newRoom]: [doorString] }
-            })
+
+
+         
 
         }
         
