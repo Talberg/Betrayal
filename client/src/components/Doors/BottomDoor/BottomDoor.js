@@ -2,7 +2,9 @@ import React from 'react'
 import './BottomDoor.scss'
 
 function BottomDoor(props){
+    //need this to be more dynamic. should 
  let player = props.rooms.players.player1.location === props.location
+ let player2 = false
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
@@ -27,28 +29,35 @@ function BottomDoor(props){
         console.log(doors)
    
         
-        if (!opened.open) {
-            console.log('click:')
-            if (
-                props.rooms.open[newRoom]
-            ) {
-                console.log('character needs to move to the Left when the button is pushed')
-
-            }
-            else { randomGroundFloor(props) }
+        if (!opened.open) { randomGroundFloor(props)
 
 
         }
         else{
-            console.log('move the player left')
+            moveDown(props)
+        }
+       
+        function moveDown (props){
+         
+            const setRooms = props.changeState
+            setRooms({
+                ...props.rooms, 
+                players:{player1:{location:newRoom}},
+            
+              
+            })
+
+
         }
 
 
 
         function randomGroundFloor(props) {
 
-            let rArray = ['rl', 'rb', 'tr']
-            let doorString = rArray[getRandomInt(3)]
+            let rArray2 = ['tl', 'tb', 'tr']
+            let rArray3= ['trl', 'trb', 'tbl']
+            let doorString2 = rArray2[getRandomInt(3)]
+            let doorString3 = rArray3[getRandomInt(3)]
 
             const setRooms = props.changeState
             const doors = props.rooms.doors
@@ -60,18 +69,7 @@ function BottomDoor(props){
             let Array = props.rooms.GroundFloorRoomsArray
             let newRoomObject = index[Array[newRoomIndex]]
             let newRoomDoorNum= newRoomObject.doors
-            if (newRoomDoorNum=== 1){
-
-            }
-            else if(newRoomDoorNum=== 2){
-
-            }
-            else if(newRoomDoorNum=== 3){
-
-            }
-            else if(newRoomDoorNum=== 4){
-
-            }
+        
            
             console.log(` max :${max}`)
             console.log(`Array${Array}`)
@@ -80,6 +78,94 @@ function BottomDoor(props){
 
 
 
+            
+ if(newRoomObject.doors === 1) {
+    let newDoors = 't'
+   
+    setRooms({
+     ...props.rooms, open: {
+         ...props.rooms.open, [newRoom]: true
+     },
+     players:{player1:{location:newRoom}},
+     GroundFloor: {
+         ...GroundFloor, [newRoom]: {
+             ...roomStuff,
+             open: true,
+             numDoors: newRoomObject.doors,
+             doors: newDoors,
+             name: newRoomObject.name,
+             entry: 't'
+
+         }
+     },
+     doors: { ...doors, [newRoom]: [newDoors] }
+ })
+}
+else if (newRoomObject.doors=== 2){
+    
+ setRooms({
+     ...props.rooms, open: {
+         ...props.rooms.open, [newRoom]: true
+     },
+     players:{player1:{location:newRoom}},
+     GroundFloor: {
+         ...GroundFloor, [newRoom]: {
+             ...roomStuff,
+             open: true,
+             numDoors: newRoomObject.doors,
+             doors: doorString2,
+             name: newRoomObject.name,
+             entry: 't'
+
+         }
+     },
+     doors: { ...doors, [newRoom]: [doorString2] }
+ })
+}
+else if ( newRoomObject.doors===3){
+
+ 
+
+ setRooms({
+     ...props.rooms, open: {
+         ...props.rooms.open, [newRoom]: true
+     },
+     players:{player1:{location:newRoom}},
+     GroundFloor: {
+         ...GroundFloor, [newRoom]: {
+             ...roomStuff,
+             open: true,
+             numDoors: newRoomObject.doors,
+             doors: doorString3,
+             name: newRoomObject.name,
+             entry: 't'
+
+         }
+     },
+     doors: { ...doors, [newRoom]: [doorString3] }
+ })
+}
+else{
+ setRooms({
+     ...props.rooms, open: {
+         ...props.rooms.open, [newRoom]: true
+     },
+     players:{player1:{location:newRoom}},
+     GroundFloor: {
+         ...GroundFloor, [newRoom]: {
+             ...roomStuff,
+             open: true,
+             numDoors: 4,
+             doors: 'trbl',
+             name: newRoomObject.name,
+             entry: 't'
+
+         }
+     },
+     doors: { ...doors, [newRoom]: [doorString3] }
+ })
+
+}
 
 
 
@@ -88,24 +174,8 @@ function BottomDoor(props){
 
 
 
-            setRooms({
-                ...props.rooms, open: {
-                    ...props.rooms.open, [newRoom]: true
-                },
-                players:{player1:{location:newRoom}},
-                GroundFloor: {
-                    ...GroundFloor, [newRoom]: {
-                        ...roomStuff,
-                        open: true,
-                        numDoors: newRoomObject.doors,
-                        doors: doorString,
-                        name: newRoomObject.name,
-                        entry: 't'
 
-                    }
-                },
-                doors: { ...doors, [newRoom]: [doorString] }
-            })
+
 
         }
 
@@ -124,7 +194,7 @@ function BottomDoor(props){
 
 
     return (<>
-    {player ? <><button disabled={false} onClick={goDown} className={`bottomDoor B${props.doors}`} ></button> </> : <></>}
+    {player||player2 ? <><button disabled={false} onClick={goDown} className={`bottomDoor B${props.doors}`} ></button> </> : <></>}
     </>)
 }
 
