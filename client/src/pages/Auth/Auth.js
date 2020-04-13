@@ -12,7 +12,8 @@ class Auth extends Component {
     password: "",
     confirmPassword: "",
     user: null,
-    message: ""
+    message: "",
+    email:""
   }
 
   handleInputChange = event => {
@@ -53,7 +54,8 @@ class Auth extends Component {
     if (this.state.username && this.state.password) {
       API.signup({
         username: this.state.username,
-        password: this.state.password
+        password: this.state.password,
+        email: this.state.email,
       }).then(user => {
         if (user.data.loggedIn) {
           this.setState({
@@ -88,6 +90,7 @@ class Auth extends Component {
             <Signup
               username={this.state.username}
               password={this.state.password}
+              email={this.state.email}
               confirmPassword={this.state.confirmPassword}
               handleSignup={this.handleSignup}
               handleInputChange={this.handleInputChange}

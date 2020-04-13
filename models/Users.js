@@ -8,6 +8,23 @@ const usersSchema = new Schema({
     unique: true,
     required: [true, "username is required"]
   },
+  email: {
+    type: String,
+    unique: true,
+    required: [true, "email is required"]
+  },
+  request:{
+    type: Array,
+    unique:false,
+    require:false,
+  },
+  friends:{
+    type: Array,
+    unique:false,
+    require:false,
+  },
+
+
   password: {
     type: String,
     unique: false,
@@ -29,10 +46,7 @@ const usersSchema = new Schema({
     type: Date,
     default: Date.now()
   },
-  todos: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Todo'
-  }]
+ 
 });
 
 usersSchema.methods.generateHash = function (password) {
