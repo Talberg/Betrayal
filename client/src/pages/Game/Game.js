@@ -1837,7 +1837,7 @@ function Game(props) {
             AbandonedRoom: {
                 name: "Abandon Room",
                 doors: 4,
-                card: false,
+                card: "o",
                 exit: false,
                 entry:''
 
@@ -1845,7 +1845,7 @@ function Game(props) {
             BallRoom: {
                 name: "Ball Room",
                 doors: 4,
-                card: false,
+                card: 'e',
                 exit: false,
                 entry:''
 
@@ -1853,7 +1853,7 @@ function Game(props) {
             BloodyRoom: {
                 name: "Bloody Room",
                 doors: 4,
-                card: false,
+                card: 'i',
                 exit: false,
                 entry:''
 
@@ -1861,7 +1861,7 @@ function Game(props) {
             CharedRoom: {
                 name: "Charred Room",
                 doors: 4,
-                card: false,
+                card: 'o',
                 exit: false,
                 entry:''
 
@@ -1869,9 +1869,11 @@ function Game(props) {
             CollapsedRoom: {
                 name: "Collapsed Room",
                 doors: 4,
-                card: false,
+                card: '',
                 exit: false,
-                entry:''
+                entry:'',
+                collapsed:true
+
 
             },
             CreakyHallway: {
@@ -1893,22 +1895,22 @@ function Game(props) {
             JunkRoom: {
                 name: "Junk Room",
                 doors: 4,
-                card: false,
-                exit: false,
+                card: 'o',
+                exit: 'junkRoom',
                 entry:''
 
             },
             GameRoom: {
                 name: 'Game Room',
                 doors: 3,
-                card: false,
+                card: 'e',
                 exit: false,
                 entry:''
             },
             Patio: {
                 name: 'Patio',
                 doors: 3,
-                card: false,
+                card: '',
                 exit: false,
                 entry:''
             },

@@ -96,7 +96,8 @@ function moveUp (props){
                          numDoors: newRoomObject.doors,
                          doors: newDoors,
                          name: newRoomObject.name,
-                         entry: 'b'
+                         entry: 'b',
+                         card:newRoomObject.card
             
                      }
                  },
@@ -117,7 +118,8 @@ function moveUp (props){
                          numDoors: newRoomObject.doors,
                          doors: doorString2,
                          name: newRoomObject.name,
-                         entry: 'b'
+                         entry: 'b',
+                         card:newRoomObject.card
             
                      }
                  },
@@ -140,7 +142,8 @@ function moveUp (props){
                          numDoors: newRoomObject.doors,
                          doors: doorString3,
                          name: newRoomObject.name,
-                         entry: 'b'
+                         entry: 'b',
+                         card:newRoomObject.card
             
                      }
                  },
@@ -160,7 +163,8 @@ function moveUp (props){
                          numDoors: 4,
                          doors: 'trbl',
                          name: newRoomObject.name,
-                         entry: 'b'
+                         entry: 'b',
+                         card:newRoomObject.card
             
                      }
                  },

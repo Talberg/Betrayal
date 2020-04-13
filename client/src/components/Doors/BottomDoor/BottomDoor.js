@@ -95,6 +95,7 @@ function BottomDoor(props){
              doors: newDoors,
              name: newRoomObject.name,
              entry: 't'
+             ,card: newRoomObject.card
 
          }
      },
@@ -116,6 +117,8 @@ else if (newRoomObject.doors=== 2){
              doors: doorString2,
              name: newRoomObject.name,
              entry: 't'
+             ,card: newRoomObject.card,
+             
 
          }
      },
@@ -139,6 +142,7 @@ else if ( newRoomObject.doors===3){
              doors: doorString3,
              name: newRoomObject.name,
              entry: 't'
+             ,card: newRoomObject.card
 
          }
      },
@@ -159,6 +163,7 @@ else{
              doors: 'trbl',
              name: newRoomObject.name,
              entry: 't'
+             ,card: newRoomObject.card
 
          }
      },
