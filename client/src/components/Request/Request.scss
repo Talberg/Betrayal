@@ -1,10 +1,12 @@
 .request{
-    position: static;
-    width:3in;
-    height: .4in;
+    position: relative;
+    top: 1rem ;
+
     background-color: darkblue;
-    margin-left: 1rem;
-    margin-top: 1rem;
+    
+    margin: 1rem;
+    padding:1rem
+
 
 }
 .button{
@@ -19,4 +21,5 @@
 }
 .friendRequest{
     color: white;
+    
 }

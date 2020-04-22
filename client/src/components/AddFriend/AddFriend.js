@@ -3,6 +3,7 @@ import Popup from 'reactjs-popup'
 import Axios from 'axios'
 import API from '../../utils/API'
 import { unstable_renderSubtreeIntoContainer } from 'react-dom';
+import './AddFriend.scss'
 
 
 function FriendRequest (props){
@@ -22,15 +23,17 @@ const [user, setState]= useState({
 
 
 function sendRequest(props){
+  API.sendRequestEmail(user)
+  window.location.reload()
     
 }
 
-    return(
-        <Popup trigger={<button> Add Friend</button>} position="right center">
+    return(<div className='addFriend'>
+        <Popup trigger={<button className='' > Add Friend</button>} position="right center">
        <form>
-      <input name='email' value={user.email} onChange={handleInputChange} type='text' placeholder="Email"></input><a onClick={()=>API.sendRequestEmail(user)}> SEND </a>
+      <input name='email' value={user.email} onChange={handleInputChange} type='text' placeholder="Email"></input><button onClick={sendRequest}> SEND </button>
 </form>
-      </Popup>
+      </Popup></div>
     )
 }
 export default FriendRequest

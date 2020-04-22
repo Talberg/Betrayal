@@ -107,6 +107,15 @@ router.post("/addFriend", authMiddleware.isLoggedIn, function(req,res,next){
     }
     )
 } );
+router.post("/removeFromRequest", authMiddleware.isLoggedIn, function(req,res,next){
+  console.log(req.body)
+  db.User.findOneAndUpdate({email:req.body.userEmail},
+    {request:req.body.newArr},
+    function(err,data){
+      console.log(data)
+    }
+    )
+} );
 
 
 module.exports = router;

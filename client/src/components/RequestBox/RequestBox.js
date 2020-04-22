@@ -6,7 +6,7 @@ function RequestBox (props){
     return(<div className='requestBox'>
 {props.user.request.map(request=>{
     return(
-        <Request user={props.user} email={request.email} username={request.username} ></Request>
+        <Request friend={request} user={props.user} email={request.email} username={request.username} ></Request>
     )
 })}
     </div>)

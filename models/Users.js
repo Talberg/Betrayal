@@ -23,6 +23,10 @@ const usersSchema = new Schema({
     unique:false,
     require:false,
   },
+  games:{
+    type: Array,
+
+  },
 
 
   password: {

@@ -41,6 +41,15 @@ export default {
     
     console.log(friendEmail)
     return axios.post("/api/users/addFriend",friendEmail)
+  },
+  removeFromRequest: function(data){
+    console.log(data)
+    return( axios.post("/api/users/removeFromRequest",data))
+  },
+  newGame : function(data){
+    console.log(data)
+    return(axios.post("/api/games/newGame", data))
   }
+
 
 };
