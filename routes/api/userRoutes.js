@@ -28,7 +28,8 @@ router.post("/signup", function(req, res, next) {
     if (!user) {
       let newUser = new db.User({
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        email: req.body.email,
       })
       newUser.password = newUser.generateHash(req.body.password);
       newUser.save(function(err) {
@@ -87,5 +88,34 @@ router.get("/user", authMiddleware.isLoggedIn, function(req, res, next) {
     res.json(err);
   });
 });
+
+router.post("/request", authMiddleware.isLoggedIn, function(req,res,next){
+  console.log(req.body.email)
+  db.User.findOneAndUpdate({email:req.body.email},
+    {$push:{request:req.body.from}},
+    function(err,data){
+      console.log(data)
+    }
+    )
+} );
+router.post("/addFriend", authMiddleware.isLoggedIn, function(req,res,next){
+  console.log(req.body)
+  db.User.findOneAndUpdate({email:req.body.myEmail},
+    {$push:{friends:req.body.friendEmail}},
+    function(err,data){
+      console.log(data)
+    }
+    )
+} );
+router.post("/removeFromRequest", authMiddleware.isLoggedIn, function(req,res,next){
+  console.log(req.body)
+  db.User.findOneAndUpdate({email:req.body.userEmail},
+    {request:req.body.newArr},
+    function(err,data){
+      console.log(data)
+    }
+    )
+} );
+
 
 module.exports = router;

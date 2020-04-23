@@ -8,6 +8,7 @@ export default {
 
   // signs up user, then logs them in
   signup: function(signupInfo) {
+    console.log(signupInfo)
     return axios.post("/api/users/signup", signupInfo);
   },
 
@@ -29,6 +30,26 @@ export default {
   // api that gets a random Chuck Norris Joke
   ChuckNorris: function() {
     return axios.get("https://api.icndb.com/jokes/random");
+  },
+  //sends request from home page by updating the user that is  passed through then up date the request with the senders user data, if yes then the user data is addeec to the friends list 
+  sendRequestEmail : function(friendEmail){
+    
+    console.log(friendEmail)
+    return axios.post("/api/users/request",friendEmail)
+  },
+  addByEmail : function(friendEmail){
+    
+    console.log(friendEmail)
+    return axios.post("/api/users/addFriend",friendEmail)
+  },
+  removeFromRequest: function(data){
+    console.log(data)
+    return( axios.post("/api/users/removeFromRequest",data))
+  },
+  newGame : function(data){
+    console.log(data)
+    return(axios.post("/api/games/newGame", data))
   }
+
 
 };
