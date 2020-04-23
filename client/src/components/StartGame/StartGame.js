@@ -39,6 +39,7 @@ function showPlayers(event){
     return(<div className='startGame'>
         <Popup trigger={<button className='' > New Game</button>} position="right center">
        <form>
+         <input type='text' ></input>
             <select id="inputState" name='pushPlayer' value={auto.pushPlayer} onChange={handleInputChange} class="form-control">
           <option selected>Select one...</option>
           {props.user.user.friends.map(
