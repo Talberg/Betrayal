@@ -2001,16 +2001,7 @@ const gameModel= {
         'Chapel',
         'Conservatory',
         'Graveyard'],
-    players:{
-        player1:{
-            username:'',
-            _id:'',
-            location:'x7y5',
-            coor:'x7y5',
-            speed: 1000
-
-            
-        }      }
+    players:[]
 }
 
 router.post('/newGame', function(req,res,next){
@@ -2029,6 +2020,14 @@ router.post('/newGame', function(req,res,next){
 
 
    
+})
+router.get('/:id', function (req,res,callback){
+    console.log(req.params.id)
+    db.Game.findById(req.params.id)
+    .then(Game=>{
+        console.log(Game)
+        res.json(Game)
+    })
 })
 
 module.exports = router

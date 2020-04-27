@@ -11,11 +11,11 @@ import RoomName from '../RoomName/RoomName'
 
 function Room(props) {
     let coor = props.coor
-    console.log(coor)
+
     let doorString = props.rooms.doors[coor]
-    console.log(props.rooms.GroundFloor[coor])
+
     let currentRoom = props.rooms.GroundFloor[coor]
-    console.log(currentRoom)
+
     function getRandomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }

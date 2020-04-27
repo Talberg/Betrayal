@@ -9,6 +9,8 @@ function FriendsList(props){
  let friends = props.user.user.friends
     console.log(friends)
     return(<div className='friendsList'>
+        <h4>Friends</h4>
+        <hr></hr>
         
         <AddFriend user={props.user} ></AddFriend>
         {/* map throught te friends here so that each friend is displayed  */}

@@ -7,7 +7,7 @@ import RoomName from "../RoomName/RoomName"
 function MasterFloorplan(props) {
 
     console.log(`MasterFloorplan props below`)
-    console.log(props.rooms.GroundFloor.x0y0.open)
+    console.log(props)
 
 
 

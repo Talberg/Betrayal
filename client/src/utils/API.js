@@ -49,6 +49,10 @@ export default {
   newGame : function(data){
     console.log(data)
     return(axios.post("/api/games/newGame", data))
+  },
+  loadGame(data){
+    console.log(data)
+    return(axios.get(`/api/games${data}`))
   }
 
 
