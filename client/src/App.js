@@ -11,6 +11,7 @@ import Game from '../src/pages/Game/Game'
 import API from '../src/utils/API';
 import Home from '../src/components/Home/Home'
 import ReactDOM from 'react-dom'
+import GameState from '../src/components/GameState/GameState'
 
 function App() {
   const [user, setUser] = useState({
@@ -41,6 +42,9 @@ function App() {
               <Route exact path="/login" render={(props) => <Auth {...props} action="login" />} />
               <Route exact path="/profile" ><Home user={user}></Home></Route>
               <Route exact path="/map" ><Game></Game></Route> 
+              <Route exact path='/gametest' ><Game></Game></Route>
+              <Route exact path='/:id' ><GameState user={user} ></GameState></Route>
+
               <Route component={NoMatch} />
             </Switch>
           </Container>

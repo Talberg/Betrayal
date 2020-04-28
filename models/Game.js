@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const gameSchema = new Schema({
     name: {
         type:String,
-        required:true
+        
     },
     game: {
         type: Object

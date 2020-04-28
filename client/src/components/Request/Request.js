@@ -12,11 +12,7 @@ function removeFriendRequest(props){
     const user = props.user
     const friend= props.friend
     const newRequests = props.user.request
-    console.log(`user: `)
-    console.log(user)
-    console.log(`friend: `)
-    console.log(friend)
-    console.log(props)
+ 
     // fliters out the clicked friends 
     let Requests = newRequests.filter(data=> data.email !== props.email)
 

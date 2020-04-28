@@ -20,7 +20,17 @@ function GameDisplay(props) {
     let user = props.user.user
 
     console.log(user)
-    return (<div className='gameDisplay' ><StartGame user={props.user}></StartGame>
+    function gameLink (game_id){
+        document.location=`${game_id}`
+    }
+    return (<div className='gameDisplay' >
+        <h4>Games</h4>
+        
+        <hr></hr>
+        
+        
+        
+        <StartGame user={props.user}></StartGame>
         <br />
         <h5  > Current Games : </h5>
         <hr />
@@ -32,7 +42,7 @@ function GameDisplay(props) {
             {user.games.map(game => {
                 return (<li> {game}
                 {/* use an route to get the game object by finding by id */}
-                    <hr /> <button>Start</button>
+                    <hr /> <button onClick={()=>{gameLink(game)}} >Start</button>
                     <Popup trigger={<button className='' >Players</button>} >
                        {/* this is where i need to map through the players on  the game object  */}
                        <ul>

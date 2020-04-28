@@ -8,7 +8,7 @@ function StartGame(props){
 
 const [auto, setAuto] = useState(
     {
-        players:[props.user],
+        players:[props.user.user.email],
         pushPlayer:''
     }
 )
