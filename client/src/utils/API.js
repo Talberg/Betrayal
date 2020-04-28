@@ -53,6 +53,11 @@ export default {
   loadGame(data){
     console.log(data)
     return(axios.get(`/api/games${data}`))
+  },
+  saveGame(id,data){
+    console.log (data)
+    let newID = id.split('/')[1]
+    return(axios.post(`/api/games${id}`, data))
   }
 
 

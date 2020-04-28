@@ -2,7 +2,40 @@ import React from 'react'
 import './RightDoor.scss'
 
 function RightDoor(props) {
-    let player = props.rooms.players.player1.location === props.location
+    let playersObj = props.rooms.players
+    //make the game read the loacation ove the user by matching the user to the player opject 
+    let userLocation = ""
+    let playerNum
+    let playerStuff
+    function set1() {
+        userLocation = playersObj.player1.location
+        playerNum = 'player1'
+        playerStuff = playersObj.player1
+    }
+    function set2() {
+        userLocation = playersObj.player2.location
+        playerNum = 'player2'
+        playerStuff = playersObj.player2
+    }
+    function set3() {
+        userLocation = playersObj.player3.location
+        playerNum = 'player3'
+        playerStuff = playersObj.player3
+    }
+    function set4() { userLocation = playersObj.player4.location
+         playerNum = 'player4' 
+          playerStuff = playersObj.player4 }
+    // function set2() { }
+    // function set2() { }
+    // function set2() { }
+    { playersObj.player1.email.toString() === props.user.user.email.toString() ? set1() :
+        playersObj.player2.email.toString() === props.user.user.email.toString() ? set2() :
+         playersObj.player3.email === props.user.user.email ? set3() : 
+         playersObj.player4.email === props.user.user.email ? set4() : userLocation="nope"  }
+
+ 
+
+   let player = props.location.toString() === userLocation.toString()
 
     function goRight() {
         function getRandomInt(max) {
@@ -36,6 +69,7 @@ function RightDoor(props) {
         }
 
         function moveRight (props){
+
          
             const setRooms = props.changeState
             const doors = props.rooms.doors
@@ -46,9 +80,17 @@ function RightDoor(props) {
             let index = props.rooms.GroundFloorRooms
             let Array = props.rooms.GroundFloorRoomsArray
             let newRoomObject = index[Array[newRoomIndex]]
+            //here
+            let newPlayerLocation = { location: newRoom}
+            console.log(props.rooms.players)
+            // let key = userKey.email.split('.')[0]
+            // console.log(key)
             setRooms({
                 ...props.rooms, 
-                players:{player1:{location:newRoom}},
+
+                //HERE is the PLAce that you need to make this more dynamic in usising the user!!!!!!
+                players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                // [...props.rooms.players],
             
               
             })
@@ -70,21 +112,26 @@ function RightDoor(props) {
             const doors = props.rooms.doors
             const GroundFloor = props.rooms.GroundFloor
             const roomStuff = GroundFloor[newRoom]
-            let max = Object.keys(props.rooms.GroundFloorRooms).length
-            let newRoomIndex = getRandomInt(max)
             let index = props.rooms.GroundFloorRooms
             let Array = props.rooms.GroundFloorRoomsArray
+            let max = Array.length
+            let newRoomIndex = getRandomInt(max)
+            let chosenRoom= Array[newRoomIndex].toString()
             let newRoomObject = index[Array[newRoomIndex]]
+            let newRoomsArray = Array.filter(data=> data !== chosenRoom )
             console.log(newRoomObject)
             
  if(newRoomObject.doors === 1) {
     let newDoors = 'l'
    
     setRooms({
-     ...props.rooms, open: {
+     ...props.rooms,
+     GroundFloorRoomsArray:newRoomsArray,
+      open: {
          ...props.rooms.open, [newRoom]: true
      },
-     players:{player1:{location:newRoom}},
+     //here
+     players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
      GroundFloor: {
          ...GroundFloor, [newRoom]: {
              ...roomStuff,
@@ -102,10 +149,13 @@ function RightDoor(props) {
 else if (newRoomObject.doors=== 2){
     
  setRooms({
-     ...props.rooms, open: {
+     ...props.rooms,
+     GroundFloorRoomsArray:newRoomsArray,
+      open: {
          ...props.rooms.open, [newRoom]: true
      },
-     players:{player1:{location:newRoom}},
+     // here 
+     players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
      GroundFloor: {
          ...GroundFloor, [newRoom]: {
              ...roomStuff,
@@ -125,10 +175,16 @@ else if ( newRoomObject.doors===3){
  
 
  setRooms({
-     ...props.rooms, open: {
+     ...props.rooms,
+     GroundFloorRoomsArray:newRoomsArray,
+      open: {
          ...props.rooms.open, [newRoom]: true
      },
-     players:{player1:{location:newRoom}},
+
+
+
+     //here also
+     players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
      GroundFloor: {
          ...GroundFloor, [newRoom]: {
              ...roomStuff,
@@ -145,10 +201,13 @@ else if ( newRoomObject.doors===3){
 }
 else{
  setRooms({
-     ...props.rooms, open: {
+     ...props.rooms,
+     GroundFloorRoomsArray:newRoomsArray,
+      open: {
          ...props.rooms.open, [newRoom]: true
      },
-     players:{player1:{location:newRoom}},
+     // here too 
+     players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
      GroundFloor: {
          ...GroundFloor, [newRoom]: {
              ...roomStuff,

@@ -43,7 +43,7 @@ function App() {
               <Route exact path="/profile" ><Home user={user}></Home></Route>
               <Route exact path="/map" ><Game></Game></Route> 
               <Route exact path='/gametest' ><Game></Game></Route>
-              <Route exact path='/:id' ><GameState></GameState></Route>
+              <Route exact path='/:id' ><GameState user={user} ></GameState></Route>
 
               <Route component={NoMatch} />
             </Switch>

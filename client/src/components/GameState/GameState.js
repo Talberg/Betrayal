@@ -5,6 +5,7 @@ import Map from '../Map/Map'
 import API from '../../utils/API'
 
 function GameState(props){
+    console.log(props)
     const [game,saveGame]=useState()
     const [loaded,setLoaded] = useState({
         loaded:false
@@ -46,18 +47,36 @@ useEffect(()=>{
     //need to save the new opject to the database everytime the rooms object is updated 
 console.log('not saving')
 console.log(game)
-console.log(rooms)
 {game ? fullLoad()  :
-   console.log('didnt work') }
+    console.log('didnt work') }
+    
+    console.log(rooms)
 
 },[game])
+
+useEffect(
+    ()=>{
+        //need to save the game to the data base everything the rooms object is changed
+         
+        API.saveGame(window.location.pathname,rooms)
+        console.log(rooms)
+        
+
+        
+    },
+    []
+
+)
+
 
 
 
 
 return(<div  >
-    {console.log(rooms)}
-    {rooms ? <><Map changeState={setRooms} rooms={rooms} ></Map></>:<> <h1>LOADING!!!!</h1></>}
+    {console.log(props.user)}
+    {props.user.loggedIn ? <> {rooms ? <><Map user={props.user} changeState={setRooms} rooms={rooms} ></Map></>:<> <h1>LOADING!!!!</h1></>} </> : <></> }
+    
+    {/* {rooms ? <><Map user={props.user} changeState={setRooms} rooms={rooms} ></Map></>:<> <h1>LOADING!!!!</h1></>} */}
 </div>)
 }
 

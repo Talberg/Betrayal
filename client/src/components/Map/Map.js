@@ -8,7 +8,7 @@ function Map(props) {
     console.log(props)
     return (<><div className='map'>
         
-        <MasterFloorplan changeState={props.changeState} rooms={props.rooms}></MasterFloorplan><GroundFloor/>
+        <MasterFloorplan user={props.user} changeState={props.changeState} rooms={props.rooms}></MasterFloorplan><GroundFloor/>
 
 
 
