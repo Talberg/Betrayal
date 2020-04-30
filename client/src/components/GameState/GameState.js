@@ -10,9 +10,8 @@ function GameState(props){
     const [loaded,setLoaded] = useState({
         loaded:false
     })
-    const [rooms, setRooms] = useState(
-     
-    )
+    const [rooms, setRooms] = useState( )
+    const [savedGame,setSave] = useState( )
 
 
 
@@ -54,17 +53,17 @@ console.log(game)
 
 },[game])
 
-useEffect(
+    useEffect(
     ()=>{
         //need to save the game to the data base everything the rooms object is changed
-         
-        API.saveGame(window.location.pathname,rooms)
-        console.log(rooms)
+         if(rooms){   API.saveGame(window.location.pathname,rooms)
+        console.log(rooms)}
+     
         
 
         
     },
-    []
+    [rooms]
 
 )
 
@@ -72,9 +71,11 @@ useEffect(
 
 
 
+
+
 return(<div  >
     {console.log(props.user)}
-    {props.user.loggedIn ? <> {rooms ? <><Map user={props.user} changeState={setRooms} rooms={rooms} ></Map></>:<> <h1>LOADING!!!!</h1></>} </> : <></> }
+    {props.user.loggedIn ? <> {rooms ? <><Map user={props.user} changeState={setRooms} rooms={rooms} save={setSave} ></Map></>:<> <h1>LOADING!!!!</h1></>} </> : <></> }
     
     {/* {rooms ? <><Map user={props.user} changeState={setRooms} rooms={rooms} ></Map></>:<> <h1>LOADING!!!!</h1></>} */}
 </div>)

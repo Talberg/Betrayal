@@ -100,10 +100,10 @@ function TopDoor(props) {
             const doors = props.rooms.doors
             const GroundFloor = props.rooms.GroundFloor
             const roomStuff = GroundFloor[newRoom]
-            let max = Object.keys(props.rooms.GroundFloorRooms).length - 1
             let newRoomIndex = getRandomInt(max)
             let index = props.rooms.GroundFloorRooms
             let Array = props.rooms.GroundFloorRoomsArray
+            let max =Array.length-1
             let newRoomObject = index[Array[newRoomIndex]]
             setRooms({
                 ...props.rooms,

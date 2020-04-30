@@ -114,7 +114,7 @@ function RightDoor(props) {
             const roomStuff = GroundFloor[newRoom]
             let index = props.rooms.GroundFloorRooms
             let Array = props.rooms.GroundFloorRoomsArray
-            let max = Array.length
+            let max = Array.length-1
             let newRoomIndex = getRandomInt(max)
             let chosenRoom= Array[newRoomIndex].toString()
             let newRoomObject = index[Array[newRoomIndex]]

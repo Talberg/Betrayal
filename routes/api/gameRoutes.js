@@ -2331,9 +2331,26 @@ const gameModel = {
         'Chapel',
         'Conservatory',
         'Graveyard'],
+    CharacterArray:[
+      {  Character1: { 
+         color:'use on letter',
+            speed : 3,
+            might:3,
+            sanity:3,
+            knowledge: 3,
+            about:'small descriptions of the character will be here ',
+            age:15,
+            birthday: 'not real sure ',
+            hobbies:['thinngs','more things'],
+            fears:'spoops',
+            chosen:false
+
+        }},
+    ],
 
     // need to make the the players array  that is passed through the post route
-    players: {}
+    players: {},
+    allChosen:false
 }
 
 
@@ -2362,7 +2379,8 @@ let j =1
             traitor: false,
             companions: [],
             movementSpeed: 0, // this is where the door should deduct the movement from when the player moves and is refreshed at the beginning of each turn ,
-            email:player
+            email:player,
+            ready:false
             
 
 

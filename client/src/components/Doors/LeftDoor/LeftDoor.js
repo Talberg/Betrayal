@@ -81,7 +81,7 @@ function LeftDoor(props) {
             let newRoomObject = index[Array[newRoomIndex]]
             setRooms({
                 ...props.rooms, 
-                players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                players: {...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
             
               
             })
@@ -102,7 +102,7 @@ function LeftDoor(props) {
             const roomStuff = GroundFloor[newRoom]
             let index = props.rooms.GroundFloorRooms
             let Array = props.rooms.GroundFloorRoomsArray
-            let max = Array.length
+            let max = Array.length -1
             let newRoomIndex = getRandomInt(max)
             let chosenRoom= Array[newRoomIndex].toString()
             let newRoomObject = index[Array[newRoomIndex]]
@@ -113,26 +113,26 @@ function LeftDoor(props) {
             console.log(newRoomObject)
 
 
-            setRooms({
-                ...props.rooms,
-                GroundFloorRoomsArray:newRoomsArray,
-                 open: {
-                    ...props.rooms.open, [newRoom]: true
-                },
-                players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
-                GroundFloor: {
-                    ...GroundFloor, [newRoom]: {
-                        ...roomStuff,
-                        open: true,
-                        numDoors: 4,
-                        doors: 'trbl',
-                        name: newRoomObject.name,
-                        entry: 't'
+            // setRooms({
+            //     ...props.rooms,
+            //     GroundFloorRoomsArray:newRoomsArray,
+            //      open: {
+            //         ...props.rooms.open, [newRoom]: true
+            //     },
+            //     players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+            //     GroundFloor: {
+            //         ...GroundFloor, [newRoom]: {
+            //             ...roomStuff,
+            //             open: true,
+            //             numDoors: 4,
+            //             doors: 'trbl',
+            //             name: newRoomObject.name,
+            //             entry: 't'
            
-                    }
-                },
-                doors: { ...doors, [newRoom]: [doorString3] }
-            })
+            //         }
+            //     },
+            //     doors: { ...doors, [newRoom]: [doorString3] }
+            // })
 
  if(newRoomObject.doors === 1) {
        let newDoors = 'r'
