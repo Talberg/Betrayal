@@ -20,9 +20,19 @@ function ready (userEmail){
      
 
 function saveCharacter(event){
-    event.preventDefault()
-    console.log(event.target)
+    event.preventDefault() 
     let character = event.target.value
+    let characterObj ={ ...props.rooms.CharacterArray}
+    console.log(characterObj[character])
+    console.log(characterObj)
+    console.log({...props.rooms.CharacterArray[character]})
+    let playerObj = {...props.rooms.players[player]}
+    console.log()
+
+    console.log(character)
+    console.log(player)
+
+   
    
     
     

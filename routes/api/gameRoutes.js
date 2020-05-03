@@ -2346,6 +2346,34 @@ const gameModel = {
             chosen:false
 
         }},
+      {  Character2: { 
+         color:'use on letter',
+            speed : 3,
+            might:3,
+            sanity:3,
+            knowledge: 3,
+            about:'small descriptions of the character will be here ',
+            age:15,
+            birthday: 'not real sure ',
+            hobbies:['thinngs','more things'],
+            fears:'spoops',
+            chosen:false
+
+        }},
+      {  Character3: { 
+         color:'use on letter',
+            speed : 3,
+            might:3,
+            sanity:3,
+            knowledge: 3,
+            about:'small descriptions of the character will be here ',
+            age:15,
+            birthday: 'not real sure ',
+            hobbies:['thinngs','more things'],
+            fears:'spoops',
+            chosen:false
+
+        }},
     ],
 
     // need to make the the players array  that is passed through the post route
