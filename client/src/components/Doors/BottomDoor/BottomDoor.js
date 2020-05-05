@@ -2,7 +2,32 @@ import React from 'react'
 import './BottomDoor.scss'
 
 function BottomDoor(props){
+
+    let playerKey
     let playersObj = props.rooms.players
+    let keyArray
+    
+   function ready (userEmail){
+    playerKey= userEmail
+    
+    console.log(player)
+       }
+       
+    function allReady(){
+          keyArray = Object.keys(props.rooms.players)
+       
+        keyArray.map(player=>{
+           let playerEmail = playersObj[player].email
+           let userEmail= props.user.user.email 
+           if(playerEmail=== userEmail){
+               ready(player)
+           }
+
+
+          return(console.log(playersObj[player]))
+        })
+    }
+    allReady()
     //make the game read the loacation ove the user by matching the user to the player opject 
     let userLocation = ""
     let playerNum
@@ -25,9 +50,7 @@ function BottomDoor(props){
     function set4() { userLocation = playersObj.player4.location
          playerNum = 'player4' 
           playerStuff = playersObj.player4 }
-    function set2() { }
-    function set2() { }
-    function set2() { }
+  
 
     { playersObj.player1.email.toString() === props.user.user.email.toString() ? set1() :
         playersObj.player2.email.toString() === props.user.user.email.toString() ? set2() :
@@ -239,7 +262,7 @@ else{
 
 
     return (<>
-    {player||player2 ? <><button disabled={false} onClick={goDown} className={`bottomDoor B${props.doors}`} ></button> </> : <></>}
+    {player ? playersObj[playerKey].turn ? <><button disabled={false} onClick={goDown} className={`bottomDoor B${props.doors}`} ></button> </> : <></> : <></>}
     </>)
 }
 

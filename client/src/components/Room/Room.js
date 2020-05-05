@@ -285,7 +285,7 @@ function Room(props) {
 
     return (<>
 
-        {props.open ? <> {pickRoom()} </> : <></>}
+        {props.open ? <><div> {pickRoom()} </div> </> : <></>}
     </>)
 }
 

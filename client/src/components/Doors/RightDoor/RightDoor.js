@@ -2,7 +2,38 @@ import React from 'react'
 import './RightDoor.scss'
 
 function RightDoor(props) {
+
+
+
+
+
+
+
+     let playerKey
     let playersObj = props.rooms.players
+    let keyArray
+    
+   function ready (userEmail){
+    playerKey= userEmail
+    
+    console.log(player)
+       }
+       
+    function allReady(){
+          keyArray = Object.keys(props.rooms.players)
+       
+        keyArray.map(player=>{
+           let playerEmail = playersObj[player].email
+           let userEmail= props.user.user.email 
+           if(playerEmail=== userEmail){
+               ready(player)
+           }
+
+
+          return(console.log(playersObj[player]))
+        })
+    }
+    allReady()
     //make the game read the loacation ove the user by matching the user to the player opject 
     let userLocation = ""
     let playerNum
@@ -36,7 +67,8 @@ function RightDoor(props) {
  
 
    let player = props.location.toString() === userLocation.toString()
-
+        console.log(props.location.toString())
+        console.log(userLocation.toString())
     function goRight() {
         function getRandomInt(max) {
             return Math.floor(Math.random() * Math.floor(max));
@@ -234,7 +266,9 @@ else{
 
 
     }
-    return (<>{player ? <><button disabled={false} onClick={goRight} className={`rightDoor R${props.doors}`} ></button> </> : <></>}</>)
+    console.log(player)
+    console.log(playersObj[playerKey].turn)
+return (<>{player ? playersObj[playerKey].turn ? <><button disabled={false} onClick={goRight} className={`rightDoor R${props.doors}`} ></button> </> : <></>:<></>}</>)
 }
 
 export default RightDoor
