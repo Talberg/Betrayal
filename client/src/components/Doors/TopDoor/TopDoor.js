@@ -2,7 +2,38 @@ import React from 'react'
 import './TopDoor.scss'
 
 function TopDoor(props) {
+
+    let playerKey
     let playersObj = props.rooms.players
+    let keyArray
+    
+   function ready (userEmail){
+    playerKey= userEmail
+    
+    console.log(player)
+       }
+       
+    function allReady(){
+          keyArray = Object.keys(props.rooms.players)
+       
+        keyArray.map(player=>{
+           let playerEmail = playersObj[player].email
+           let userEmail= props.user.user.email 
+           if(playerEmail=== userEmail){
+               ready(player)
+       
+           }
+
+
+          return(console.log(playersObj[player]))
+        })
+    }
+    allReady()
+
+
+
+
+
     //make the game read the loacation ove the user by matching the user to the player opject 
     let userLocation = ""
     let playerNum
@@ -49,10 +80,6 @@ function TopDoor(props) {
 
 
 
-    console.log(props.user.user.email)
-    console.log(playersObj.player1.email)
-    console.log(userLocation)
-    console.log()
 
     //     props.rooms.players.map(player=>{
     //         let Email= player
@@ -272,7 +299,7 @@ function TopDoor(props) {
     }
 
 
-    return (<> {player ? <><button disabled={false} onClick={goUp} className={`topDoor T${props.doors}`} ></button> </> : <></>}</>)
+    return (<> {player ? playersObj[playerKey].turn ?   <><button disabled={false} onClick={goUp} className={`topDoor T${props.doors}`} ></button> </> : <></ >: <></>}</>)
 }
 
 export default TopDoor
