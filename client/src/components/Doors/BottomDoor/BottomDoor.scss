@@ -5,44 +5,49 @@
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: .2in;
+    border-width: .05in .1in  0 .1in;
     border-color: #007bff transparent transparent transparent;
     z-index: 1003;
     background-color:transparent;
 
 }
+.disabledB{
+    border-color: chocolate transparent transparent transparent;
+    z-index: -1;
+}
 .Btrbl{
-    right:-0.15in;
-    top:-0.1in;
+    right:-.23in;
+    top: .32in;
 }
 .B4{
-    right:-0.15in;
-    top:-0.1in;
+    right:-.23in;
+    top: .32in;
 }
 .Brbl{
-    right:-0.15in;
-    top:.3in;
+    right: -.06in;
+    top: 0.62in;
 }
 .Btbl{
-    right:-0.15in;
-    top:.3in;
+    right: .15in;
+    top: .6in;
 }
 .Btrb{
-    right:-0.15in;
-    top:-0.1in;
+    right: -.23in;
+    top: .32in;
 }
 .Btb{
-    right:-0.15in;
-    top:0.3in;
+    right: .13in;
+    top: .6in;
 }
 .Brb{
-    right:-.15in;
-    top:.3in
+    right:-0.02in;
+    top:0.62in
 }.Bbl{
-    right:-.15in;
-    top:.7in
+    right: -.22in;
+    top: .6in;
+
 }
 .Bb{
-    right:-.15in;
-    top:.7in
+    right: -.23in;
+    top: .6in;
 }

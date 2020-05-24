@@ -5,35 +5,39 @@
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: .2in .2in .2in 0;
+    border-width: .1in .05in .1in 0;
     border-color: transparent #007bff transparent transparent;
     z-index: 1003;
     background-color:transparent;
 
 }
+.disabledL{
+    border-color:  transparent chocolate transparent transparent;
+    z-index: -1;
+}
 .Ltrbl{
-    left:-.28in;
-    top:-1.05in;
+    left:-.44in;
+    top:-.1in;
 }
 .L4{
-    left:-.28in;
-    top:-1.05in;
+    left:-.44in;
+    top:-.1in;
 }
 .Lrbl{
-    left:-.28in;
-    top:-.65in;
+    left: -.599in;
+    top: 0.19In;
 }
 .Ltbl{
-    left:-.25in;
-    top:-.6in;
+    left: -0.1in;
+    top: -0.05in;
 }
 .Ltrl{
-    left:-.28in;
-    top:-.61in;
+    left: -.68in;
+    top: 0.185in;
 }
 .Ltl{
-    left:-.25in;
-    top:-.2in;
+    left: -0.47in;
+    top: .2in;
 }
 .Ltr{
     left: 0in;
@@ -41,9 +45,13 @@
 }
 .Lrl{
     left:-.25in;
-    top:-.22in
+    top:.2in
 }
 .Lbl{
-    left:-.25in;
-    top:-.22in
+    left: -0.44in;
+    top: .22in;
+}
+.Ll{
+    left: -0.1in;
+    top: .2in;
 }

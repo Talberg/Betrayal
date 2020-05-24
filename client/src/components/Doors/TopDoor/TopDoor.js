@@ -6,26 +6,26 @@ function TopDoor(props) {
     let playerKey
     let playersObj = props.rooms.players
     let keyArray
-    
-   function ready (userEmail){
-    playerKey= userEmail
-    
-    console.log(player)
-       }
-       
-    function allReady(){
-          keyArray = Object.keys(props.rooms.players)
-       
-        keyArray.map(player=>{
-           let playerEmail = playersObj[player].email
-           let userEmail= props.user.user.email 
-           if(playerEmail=== userEmail){
-               ready(player)
-       
-           }
+
+    function ready(userEmail) {
+        playerKey = userEmail
+
+        console.log(player)
+    }
+
+    function allReady() {
+        keyArray = Object.keys(props.rooms.players)
+
+        keyArray.map(player => {
+            let playerEmail = playersObj[player].email
+            let userEmail = props.user.user.email
+            if (playerEmail === userEmail) {
+                ready(player)
+
+            }
 
 
-          return(console.log(playersObj[player]))
+            return (console.log(playersObj[player]))
         })
     }
     allReady()
@@ -60,10 +60,12 @@ function TopDoor(props) {
     }
 
 
-    { playersObj.player1.email.toString() === props.user.user.email.toString() ? set1() :
-         playersObj.player2.email.toString() === props.user.user.email.toString() ? set2() :
-          playersObj.player3.email === props.user.user.email ? set3() : 
-          playersObj.player4.email === props.user.user.email ? set4() : userLocation="nope"  }
+    {
+        playersObj.player1.email.toString() === props.user.user.email.toString() ? set1() :
+            playersObj.player2.email.toString() === props.user.user.email.toString() ? set2() :
+                playersObj.player3.email === props.user.user.email ? set3() :
+                    playersObj.player4.email === props.user.user.email ? set4() : userLocation = "nope"
+    }
 
     if (playersObj.player2) {
 
@@ -130,7 +132,7 @@ function TopDoor(props) {
             let newRoomIndex = getRandomInt(max)
             let index = props.rooms.GroundFloorRooms
             let Array = props.rooms.GroundFloorRoomsArray
-            let max =Array.length-1
+            let max = Array.length - 1
             let newRoomObject = index[Array[newRoomIndex]]
             setRooms({
                 ...props.rooms,
@@ -299,7 +301,14 @@ function TopDoor(props) {
     }
 
 
-    return (<> {player ? playersObj[playerKey].turn ?   <><button disabled={false} onClick={goUp} className={`topDoor T${props.doors}`} ></button> </> : <></ >: <></>}</>)
+    return (<> {
+        player ?
+        playersObj[playerKey].turn ?
+            <><button disabled={false} onClick={goUp} className={`topDoor  T${props.doors}`} ></button> </> :
+            null :
+            <><button disabled={true} onClick={goUp} className={`topDoor disabledT T${props.doors}`} ></button> </>
+    }
+    </>)
 }
 
 export default TopDoor

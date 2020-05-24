@@ -5,7 +5,7 @@ function RoomName(props){
 console.log(props.name)    
 
 
-return(<input className={`roomName ${props.x}N ${props.y}N `}  value={props.name}></input>)
+return(<p className={`roomName ${props.x}N ${props.y}N `}  value={props.name}>{props.name}</p>)
 }
 
 export default RoomName

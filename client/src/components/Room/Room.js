@@ -8,6 +8,8 @@ import RightDoor from '../Doors/RightDoor/RightDoor'
 import BottomDoor from '../Doors/BottomDoor/BottomDoor'
 import TopDoor from '../Doors/TopDoor/TopDoor'
 import RoomName from '../RoomName/RoomName'
+import CharacterHolder from '../CharacterHolder/CharacterHolder'
+
 
 function Room(props) {
     let coor = props.coor
@@ -205,6 +207,7 @@ function Room(props) {
                 <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                 <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
                 <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                <CharacterHolder user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
             </div>);
 
             case 'tr': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
@@ -267,12 +270,7 @@ function Room(props) {
             // eslint-disable-next-line default-case
 
             // eslint-disable-next-line no-fallthrough
-            case 4: return (<div className={`${props.x} ${props.color} room ${props.y}`}>
-                <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
-                <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
-                <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
-                <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
-            </div>);
+         
             default: return (<div className={`${props.x} ${props.color} room ${props.y}`}></div>)
 
 
@@ -285,7 +283,7 @@ function Room(props) {
 
     return (<>
 
-        {props.open ? <><div> {pickRoom()} </div> </> : <></>}
+        {props.open ? <><div className='playerHolder' > {pickRoom()} </div> </> : <></>}
     </>)
 }
 
