@@ -28,10 +28,19 @@ function Room(props) {
         switch (currentRoom.numDoors) {
             // eslint-disable-next-line default-case
             case 1: switch (currentRoom.entry) {
-                case 'r': return (<div className={`${props.x} ${props.color} room ${props.y}`}><RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor></div>);
-                case 't': return (<div className={`${props.x} ${props.color} room ${props.y}`}><TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} /> </div>);
-                case 'b': return (<div className={`${props.x} ${props.color} room ${props.y}`}><BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor> </div>);
-                case 'l': return (<div className={`${props.x} ${props.color} room ${props.y}`}><LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor></div>);
+                case 'r': return (<div className={`${props.x} ${props.color} room ${props.y}`}><RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
+                                <CharacterHolder doorLetters={currentRoom.doors} doorCount={1} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
+                </div>);
+                case 't': return (<div className={`${props.x} ${props.color} room ${props.y}`}><TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />         
+                       <CharacterHolder doorLetters={currentRoom.doors} doorCount={1} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+                </div>);
+                case 'b': return (<div className={`${props.x} ${props.color} room ${props.y}`}><BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
+                                <CharacterHolder doorLetters={currentRoom.doors} doorCount={1} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+ </div>);
+                case 'l': return (<div className={`${props.x} ${props.color} room ${props.y}`}><LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                                <CharacterHolder doorLetters={currentRoom.doors} doorCount={1} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+</div>);
 
             };
             // eslint-disable-next-line no-fallthrough
@@ -48,14 +57,20 @@ function Room(props) {
                         case 'rl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                             <RightDoor  user={props.user} save={props.save} doors='rl' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                             <LeftDoor user={props.user} save={props.save} doors='rl' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                            <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                         </div>);
                         case 'rb': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                             <RightDoor  user={props.user} save={props.save} doors='rb' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                             <BottomDoor user={props.user} save={props.save} doors='rb' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
+                            <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                         </div>);
                         case 'tr': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                             <TopDoor user={props.user} save={props.save} doors='tr' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                             <RightDoor  user={props.user} save={props.save} doors='tr' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
+                            <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                         </div>);
 
                     };
@@ -64,14 +79,20 @@ function Room(props) {
                     case 'tr': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors='tr' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <RightDoor  user={props.user} save={props.save} doors='tr' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                     case 'tb': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                     case 'tl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
 
                     </div>);
 
@@ -82,14 +103,20 @@ function Room(props) {
                     case 'tb': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                     case 'rb': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                         <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                     case 'bl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
                         <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
 
                 }
@@ -98,15 +125,21 @@ function Room(props) {
                     case 'bl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
                         <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                     case 'tl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
 
                     </div>);
                     case 'rl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <RightDoor  user={props.user} save={props.save} doors='rl' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                         <LeftDoor user={props.user} save={props.save} doors='rl' rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={2} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                 };
 
@@ -117,16 +150,22 @@ function Room(props) {
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                         <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={3} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                     case 'trl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                         <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                     case 'tbl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
                         <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
 
                 }
@@ -135,21 +174,29 @@ function Room(props) {
                         <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                         <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
                         <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                     case 'trl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                         <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                     case 'trl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                         <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                         case 'trb': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                         <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
 
 
@@ -159,21 +206,29 @@ function Room(props) {
                         <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                         <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
                         <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                     case 'trl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                         <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                     case 'trb': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                         <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                         <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                         <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
+                        <CharacterHolder doorLetters={currentRoom.doors} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                     </div>);
                           case 'tbl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                           <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                           <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
                           <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                          <CharacterHolder doorLetters={currentRoom.doors} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                       </div>);
                 }
                 case 'b' : switch(currentRoom.doors){
@@ -181,21 +236,29 @@ function Room(props) {
                     <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                     <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                     <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
+                    <CharacterHolder doorLetters={currentRoom.doors} doorLetters={currentRoom.doors} doorCount={3} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
                 </div>);
                 case 'rbl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                 <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                 <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
                 <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                <CharacterHolder doorCount={3} doorLetters={currentRoom.doors} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
             </div>);
                 case 'trl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                 <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                 <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                 <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                <CharacterHolder doorCount={3} doorLetters={currentRoom.doors} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
             </div>);
                   case 'tbl': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
                   <TopDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} />
                   <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
                   <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
+                  <CharacterHolder doorCount={3} doorLetters={currentRoom.doors} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+
               </div>);
                     
                 }
@@ -207,7 +270,7 @@ function Room(props) {
                 <RightDoor  user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></RightDoor>
                 <BottomDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`}></BottomDoor>
                 <LeftDoor user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></LeftDoor>
-                <CharacterHolder user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
+                <CharacterHolder doorLetters={currentRoom.doors} doorCount={4} user={props.user} save={props.save} doors={currentRoom.doors} rooms={props.rooms} changeState={props.changeState} open={props.open} x={`${props.x} `} y={`${props.y}`} location={`${props.coor}`} ></CharacterHolder>
             </div>);
 
             case 'tr': return (<div className={`${props.x} ${props.color} room ${props.y}`}>
