@@ -3,8 +3,42 @@ import './Start.scss'
 import LeftDoor from '../Doors/LeftDoor/LeftDoor'
 import Room from '../Room/Room'
 
-function Start (props){
-    return (<><Room open={props.open}   doors='l' coor='x7y5' color='red' x='x7' y='y5'> </Room>  </>)
+function Start (props){let trueBoi
+
+    
+    //set the allready to true 
+    function AllReady (event){
+    event.preventDefault()
+        trueBoi = true
+        Object.keys(props.rooms.players).map(ready=>
+            {
+                let ifReady = props.rooms.players[ready]
+                if(!ifReady){
+                    trueBoi = false
+                }
+
+            }
+            
+        )
+        console.log(trueBoi)
+    }
+
+
+
+
+
+
+
+    props.changeState(
+        {...props.rooms,allReady:trueBoi}
+    )
+function startTheGame(event){
+    
+}
+
+    return (<div className='start'>
+        <button onClick={AllReady} className='startButton'>Start Your Game</button>
+    </div>)
 }
 
 export default Start 

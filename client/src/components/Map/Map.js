@@ -4,6 +4,7 @@ import MasterFloorplan from '../MasterFloorplan/MasterFloorplan'
 import GroundFloor from '../../pages/GroundFloor/GroundFloor'
 import CharacterSelect from '../CharacterSelect/CharacterSelect'
 import EndTurn from '../EndTurn/EndTurn'
+import GameCard from '../GameCard/GameCard'
 
 function Map(props) {
     console.log(props.rooms.players)
@@ -54,10 +55,12 @@ function Map(props) {
     }
     allReady()
     let playerReady = playersObj[player].ready
+    let all = props.rooms.allReady
 
     return (<>
-    
-    {playerReady ? <><div className='map'><MasterFloorplan save={props.save} user={props.user} changeState={props.changeState} rooms={props.rooms}></MasterFloorplan><EndTurn save={props.save} user={props.user} changeState={props.changeState} rooms={props.rooms} ></EndTurn><GroundFloor/></div></> :
+    {/* change this from playerReady to allReady */}
+    {all? <><div className='map'><MasterFloorplan save={props.save} user={props.user} changeState={props.changeState} rooms={props.rooms}></MasterFloorplan><GameCard  save={props.save} user={props.user} changeState={props.changeState} rooms={props.rooms}   ></GameCard>            <EndTurn save={props.save} user={props.user} changeState={props.changeState} rooms={props.rooms} ></EndTurn>
+<GroundFloor/></div></> :
     <CharacterSelect save={props.save} user={props.user} changeState={props.changeState} rooms={props.rooms} ></CharacterSelect> }
     
     

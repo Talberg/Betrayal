@@ -38,127 +38,37 @@ function ready (userEmail){
      
 
 function saveCharacter(event){
-
+    event.preventDefault()
     let character = event.target.value
 
     // could map the CharacterArray and if the character === then set a variable to 
     event.preventDefault() 
-    let newCharacterArray = [...props.rooms.CharacterArray]
+    let Array = [...props.rooms.CharacterArray]
+    // this works
 
-    //make sure all the characters 
-    switch(character){
-        // eslint-disable-next-line no-lone-blocks
-        
-        case 'Character1': {
-            
-    newCharacterArray[0] = {
-        Character1: {
-            color:'use on letter',
-            speed : 3,
-            might:3,
-            sanity:3,
-            knowledge: 3,
-            about:'small descriptions of the character will be here ',
-            age:15,
-            birthday: 'not real sure ',
-            hobbies:['thinngs','more things'],
-            fears:'spoops',
-            chosen:true
-        },
-        
-        
-        
-    }
-    props.changeState({
-        ...props.rooms,
-      CharacterArray:newCharacterArray
+    let newCharacterArray = Array.filter(data=> data !== Array[character])
+    console.log(newCharacterArray ) 
 
-       , players:{
-            ...props.rooms.players,
-            //if the players email is === the 
-            [player]:{...props.rooms.players[player],
-                        ready:true}
-            
-        }
+    delete Array.character
 
-    })
-    console.log(newCharacterArray)
-    break}
-    // eslint-disable-next-line no-lone-blocks
-    case 'Character2' :{
-        newCharacterArray[1] = {
-            Character2: {
-                color:'use on letter',
-                speed : 3,
-                might:3,
-                sanity:3,
-                knowledge: 3,
-                about:'small descriptions of the character will be here ',
-                age:15,
-                birthday: 'not real sure ',
-                hobbies:['thinngs','more things'],
-                fears:'spoops',
-                chosen:true
-            }
-        }
-        props.changeState({
-            ...props.rooms,
-          CharacterArray:newCharacterArray
-    
-           , players:{
-                ...props.rooms.players,
-                //if the players email is === the 
-                [player]:{...props.rooms.players[player],
-                            ready:true}
-                
-            }
-    
-        })
-        console.log(newCharacterArray)
-        break
-    }
-    case 'Character3' :{
-        newCharacterArray[2] = {
-            Character2: {
-                color:'use on letter',
-                speed : 3,
-                might:3,
-                sanity:3,
-                knowledge: 3,
-                about:'small descriptions of the character will be here ',
-                age:15,
-                birthday: 'not real sure ',
-                hobbies:['thinngs','more things'],
-                fears:'spoops',
-                chosen:true
-            }
-        }
-        props.changeState({
-            ...props.rooms,
-          CharacterArray:newCharacterArray
-    
-           , players:{
-                ...props.rooms.players,
-                //if the players email is === the 
-                [player]:{...props.rooms.players[player],
-                            ready:true}
-                
-            }
-    
-        })
-        console.log(newCharacterArray)
-        break
-    }
-    default: {break}
-        
-    }
+    console.log(Array)
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
 
   
     let characterObj ={ ...props.rooms.CharacterArray}
-    console.log(newCharacterArray)
     console.log(characterObj)
     console.log({...props.rooms.CharacterArray[character]})
     let playerObj = {...props.rooms.players[player]}
@@ -166,12 +76,6 @@ function saveCharacter(event){
 
     console.log(character)
     console.log(player)
-
-   
-   
-    
-    
-
 
     //save the character and set the ready on that player and the chosen on that character to true and false respectively 
 
@@ -188,13 +92,14 @@ function saveCharacter(event){
             ...props.rooms.players,
             //if the players email is === the 
             [player]:{...props.rooms.players[player],
+                    character: Array[character]   ,
                         ready:true}
             
         }
 
     })
 }
-
+let index = 0
 allReady()
 
 
@@ -203,10 +108,10 @@ allReady()
     {
         props.rooms.CharacterArray.map(character => {
 
-            console.log( character.speed)
+            console.log( character)
             let characterName = Object.keys(character)[0]
             let characterObj = Object.values(character)[0]
-            console.log(characterObj.chosen)
+            console.log(characterObj)
 
             if (!characterObj.chosen){
                 return (
@@ -228,14 +133,15 @@ allReady()
                                                 <CardText>Speed:{characterObj.speed}</CardText>
                                                 <CardText>Might:{characterObj.might}</CardText>
                                                 <CardText>Knowledge:{characterObj.knowledge}</CardText>
-                                                <Button value={characterName} onClick={saveCharacter}>Select This Character</Button>
+                                                <Button value={index} onClick={saveCharacter}>Select This Character</Button>
                                             </CardBody>
                                         </Card>
                                     </div>
-                    
+                        {  index++}
                     
                                     </>
                                 )
+                                index++
             }
           
         })
