@@ -2332,7 +2332,22 @@ const gameModel = {
         'Conservatory',
         'Graveyard'],
     CharacterArray:[
-      {  Character1: { 
+        { 
+         color:'p',
+            speed : 4,
+            might:4,
+            sanity:3,
+            knowledge: 3,
+            about:'small descriptions of the character will be here ',
+            age:15,
+            birthday: 'not real sure ',
+            hobbies:['thinngs','more things'],
+            fears:'spoops',
+            chosen:false,
+            name:'character1'
+
+        },
+       { 
          color:'use on letter',
             speed : 3,
             might:3,
@@ -2343,10 +2358,11 @@ const gameModel = {
             birthday: 'not real sure ',
             hobbies:['thinngs','more things'],
             fears:'spoops',
-            chosen:false
+            chosen:false,
+            name:'character2'
 
-        }},
-      {  Character2: { 
+        },
+      { 
          color:'use on letter',
             speed : 3,
             might:3,
@@ -2357,28 +2373,15 @@ const gameModel = {
             birthday: 'not real sure ',
             hobbies:['thinngs','more things'],
             fears:'spoops',
-            chosen:false
+            chosen:false,
+            name:'character3'
 
-        }},
-      {  Character3: { 
-         color:'use on letter',
-            speed : 3,
-            might:3,
-            sanity:3,
-            knowledge: 3,
-            about:'small descriptions of the character will be here ',
-            age:15,
-            birthday: 'not real sure ',
-            hobbies:['thinngs','more things'],
-            fears:'spoops',
-            chosen:false
-
-        }},
+        },
     ],
 
     // need to make the the players array  that is passed through the post route
     players: {},
-    allChosen:false
+    allReady:false
 }
 
 
