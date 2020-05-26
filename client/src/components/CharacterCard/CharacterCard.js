@@ -49,9 +49,9 @@ function saveCharacter(event){
     let newCharacterArray = Array.filter(data=> data !== Array[character])
     console.log(newCharacterArray ) 
 
-    delete Array.character
+   
 
-    console.log(Array)
+    console.log(Array[character])
 
 
 
@@ -86,10 +86,12 @@ function saveCharacter(event){
 
     props.changeState({
         ...props.rooms,
+        CharacterArray:newCharacterArray,
      
 
       players:{
             ...props.rooms.players,
+           
             //if the players email is === the 
             [player]:{...props.rooms.players[player],
                     character: Array[character]   ,
