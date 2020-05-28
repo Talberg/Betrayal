@@ -105,7 +105,8 @@ function RightDoor(props) {
         }
 
         function moveRight(props) {
-
+            let movementSpeed = playersObj[playerKey].movementSpeed
+            let newMovementSpeed = movementSpeed - 1
 
             const setRooms = props.changeState
             const doors = props.rooms.doors
@@ -125,7 +126,7 @@ function RightDoor(props) {
                 ...props.rooms,
 
                 //HERE is the PLAce that you need to make this more dynamic in usising the user!!!!!!
-                players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom, movementSpeed:newMovementSpeed } },
                 // [...props.rooms.players],
 
 
@@ -137,7 +138,8 @@ function RightDoor(props) {
 
 
         function randomGroundFloor(props) {
-
+            let movementSpeed = playersObj[playerKey].movementSpeed
+            let newMovementSpeed = movementSpeed - 1
             let rArray2 = ['rl', 'bl', 'tl']
             let rArray3 = ['trl', 'tbl', 'rbl']
             let doorString2 = rArray2[getRandomInt(3)]
@@ -167,7 +169,7 @@ function RightDoor(props) {
                         ...props.rooms.open, [newRoom]: true
                     },
                     //here
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom , movementSpeed:newMovementSpeed} },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -191,7 +193,7 @@ function RightDoor(props) {
                         ...props.rooms.open, [newRoom]: true
                     },
                     // here 
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom , movementSpeed:newMovementSpeed} },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -220,7 +222,7 @@ function RightDoor(props) {
 
 
                     //here also
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom , movementSpeed:newMovementSpeed} },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -243,7 +245,7 @@ function RightDoor(props) {
                         ...props.rooms.open, [newRoom]: true
                     },
                     // here too 
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom, movementSpeed:newMovementSpeed } },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -274,11 +276,13 @@ function RightDoor(props) {
     console.log(playersObj[playerKey].turn)
     return (<>{
         player ?
+        playersObj[playerKey].movementSpeed > 0 ? 
             playersObj[playerKey].turn ?
                 <><button disabled={false} onClick={goRight} className={`rightDoor R${props.doors}`} ></button> </> :
                 <><button disabled={true} onClick={goRight} className={`rightDoor disabledR R${props.doors}`} ></button></>: 
-                <><button disabled={true} onClick={goRight} className={`rightDoor disabledR R${props.doors}`} ></button>
-            </>}</>)
+                <><button disabled={true} onClick={goRight} className={`rightDoor disabledR R${props.doors}`} ></button></>:
+                <><button disabled={true} onClick={goRight} className={`rightDoor disabledR R${props.doors}`} ></button> </>  
+            }</>)
 }
 
 export default RightDoor

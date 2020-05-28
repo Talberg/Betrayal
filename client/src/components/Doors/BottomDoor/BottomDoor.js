@@ -51,6 +51,8 @@ function BottomDoor(props) {
         userLocation = playersObj.player4.location
         playerNum = 'player4'
         playerStuff = playersObj.player4
+        //build out all 6 
+        
     }
 
 
@@ -284,12 +286,12 @@ function BottomDoor(props) {
     return (<>
         {
             player ? 
-                
+                playersObj[playerKey].movementSpeed > 0 ? 
                 playersObj[playerKey].turn ?
                     <><button disabled={false} onClick={goDown} className={`bottomDoor B${props.doors}`} ></button> </> :
                     <> <button disabled={true} onClick={goDown} className={`bottomDoor disabledB B${props.doors}`} ></button> </> :
-                <><button disabled={true} onClick={goDown} className={`bottomDoor disabledB B${props.doors}`} ></button>
-                </>}
+                <><button disabled={true} onClick={goDown} className={`bottomDoor disabledB B${props.doors}`} ></button></> :
+                <><button disabled={true} onClick={goDown} className={`bottomDoor disabledB B${props.doors}`} ></button></>}
     </>)
 }
 

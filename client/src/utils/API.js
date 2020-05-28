@@ -58,7 +58,29 @@ export default {
     console.log (data)
     let newID = id.split('/')[1]
     return(axios.post(`/api/games${id}`, data))
+  },
+  roll(multiplier){
+    //roll x number of dice then return the 
+    let die = [0,1,2,0,1,2]
+    let rollArray = []
+    let rollTotal= rollArray.reduce((a, b) => a + b, 0)
+    
+
+    function rolldie() {
+      let index=  Math.floor(Math.random() * Math.floor(6));
+      return die[index]
+    }
+    // for loop that will run as many times as the mulitplier
+
+    for (let i=0; i>= multiplier; i++){
+      console.log(i)
+     let roll =  rolldie()
+     rollArray.push(roll)
+      
+    }
+    console.log(rollTotal)
   }
+  
 
 
 };

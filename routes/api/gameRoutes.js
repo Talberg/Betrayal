@@ -2177,7 +2177,7 @@ const gameModel = {
             name: "Bloody Room",
             doors: 4,
             card: 'i',
-            exit: false,
+            exit: 'i',
             entry: ''
 
         },
@@ -2192,9 +2192,9 @@ const gameModel = {
         CollapsedRoom: {
             name: "Collapsed Room",
             doors: 4,
-            card: '',
-            exit: false,
-            entry: '',
+            card: false,
+            exit: '',
+            entry: 'speed of 5+ or fall to basement',
             collapsed: true
 
 
@@ -2234,48 +2234,48 @@ const gameModel = {
             name: 'Patio',
             doors: 3,
             card: '',
-            exit: false,
+            exit: 'e',
             entry: ''
         },
         DinningRoom: {
             name: 'Dinning Room',
             doors: 2,
-            card: false,
+            card: 'o',
             exit: false,
             entry: ''
         },
         Gardens: {
             name: 'Gardens',
             doors: 2,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
         Kitchen: {
             name: 'Kitchen',
             doors: 2,
-            card: false,
+            card: 'o',
             exit: false,
             entry: ''
         },
         Library: {
             name: 'Library',
             doors: 2,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
         OrganRoom: {
             name: 'Dinning Room',
             doors: 2,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
         StatuaryCorridor: {
             name: 'Statuary Corridor',
             doors: 2,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
@@ -2284,26 +2284,26 @@ const gameModel = {
             doors: 1,
             card: false,
             exit: false,
-            entry: ''
+            entry: 'one way to basement'
         },
         Chapel: {
             name: 'Chapel',
             doors: 1,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
         Conservatory: {
             name: 'Conservatory',
             doors: 1,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
         Graveyard: {
             name: 'Graveyard',
             doors: 1,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
