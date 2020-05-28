@@ -1,10 +1,10 @@
 .playerCard{
     position: relative;
-    top:0in;
-    left:0in;
+    top: 0.9in;
+    left: 0in;
     background-color: red;
     margin: .4rem;
-    height: 2.5in;
+    height: auto
 }
 .playerNumber{
    
@@ -69,4 +69,18 @@
     top: -.65in;
     left: 0in;
     
+}
+.movementSpeed{
+    position: relative;
+    top: 0in;
+    left:0in;
+    text-align: center;
+    p{
+        font-size: 17px;
+        border-color: white ;
+        text-shadow: -1px 1px 0 rgb(250, 248, 248), 
+        1px 1px 0 #000, 
+       1px -1px 0 #000,
+      -1px -1px 0 #000
+    }
 }

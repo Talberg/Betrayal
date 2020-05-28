@@ -2177,7 +2177,7 @@ const gameModel = {
             name: "Bloody Room",
             doors: 4,
             card: 'i',
-            exit: false,
+            exit: 'i',
             entry: ''
 
         },
@@ -2192,9 +2192,9 @@ const gameModel = {
         CollapsedRoom: {
             name: "Collapsed Room",
             doors: 4,
-            card: '',
-            exit: false,
-            entry: '',
+            card: false,
+            exit: '',
+            entry: 'speed of 5+ or fall to basement',
             collapsed: true
 
 
@@ -2234,48 +2234,48 @@ const gameModel = {
             name: 'Patio',
             doors: 3,
             card: '',
-            exit: false,
+            exit: 'e',
             entry: ''
         },
         DinningRoom: {
             name: 'Dinning Room',
             doors: 2,
-            card: false,
+            card: 'o',
             exit: false,
             entry: ''
         },
         Gardens: {
             name: 'Gardens',
             doors: 2,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
         Kitchen: {
             name: 'Kitchen',
             doors: 2,
-            card: false,
+            card: 'o',
             exit: false,
             entry: ''
         },
         Library: {
             name: 'Library',
             doors: 2,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
         OrganRoom: {
             name: 'Dinning Room',
             doors: 2,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
         StatuaryCorridor: {
             name: 'Statuary Corridor',
             doors: 2,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
@@ -2284,26 +2284,26 @@ const gameModel = {
             doors: 1,
             card: false,
             exit: false,
-            entry: ''
+            entry: 'one way to basement'
         },
         Chapel: {
             name: 'Chapel',
             doors: 1,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
         Conservatory: {
             name: 'Conservatory',
             doors: 1,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
         Graveyard: {
             name: 'Graveyard',
             doors: 1,
-            card: false,
+            card: 'e',
             exit: false,
             entry: ''
         },
@@ -2331,57 +2331,238 @@ const gameModel = {
         'Chapel',
         'Conservatory',
         'Graveyard'],
-    CharacterArray:[
-        { 
-         color:'p',
-            speed : 4,
-            might:4,
-            sanity:3,
-            knowledge: 3,
-            about:'small descriptions of the character will be here ',
-            age:15,
+    CharacterArray: [
+        {
+            color: 'white',
+            speedIndex:4,
+            mightIndex:3,
+            sanityIndex:3,
+            knowledgeIndex:5,
+            speed: [0, 2, 2, 4, 4, 5, 5, 6, 6],
+            might: [0, 1, 2, 3, 4, 5, 5, 6, 6],
+            sanity: [0, 1, 3, 3, 4, 5, 5, 6, 7],
+            knowledge: [0, 4, 5, 5, 5, 5, 6, 7, 8],
+            age: 57,
             birthday: 'not real sure ',
-            hobbies:['thinngs','more things'],
-            fears:'spoops',
-            chosen:false,
-            name:'character1'
+            hobbies: [],
+            chosen: false,
+            name: 'Professor Longfellow'
 
         },
-       { 
-         color:'use on letter',
-            speed : 3,
-            might:3,
-            sanity:3,
-            knowledge: 3,
-            about:'small descriptions of the character will be here ',
-            age:15,
+        {
+            color: 'white',
+            speedIndex:3,
+            mightIndex:3,
+            sanityIndex:5,
+            knowledgeIndex:4,
+            speed: [0, 2, 3, 3, 4, 5, 6, 7, 7],
+            might: [0, 1, 2, 2, 4, 4, 5, 5, 7],
+            sanity: [0, 3, 4, 5, 5, 6, 7, 7, 8],
+            knowledge: [0, 1, 3, 3, 4, 5, 6, 6, 8],
+            about: 'small descriptions of the character will be here ',
+            age: 62,
             birthday: 'not real sure ',
-            hobbies:['thinngs','more things'],
-            fears:'spoops',
-            chosen:false,
-            name:'character2'
+            hobbies: [],
+            fears: 'spoops',
+            chosen: false,
+            name: 'Father Rhinehardt'
 
         },
-      { 
-         color:'use on letter',
-            speed : 3,
-            might:3,
-            sanity:3,
-            knowledge: 3,
-            about:'small descriptions of the character will be here ',
-            age:15,
+        {
+            color: 'orange',
+            speedIndex:3,
+            mightIndex:4,
+            sanityIndex:3,
+            knowledgeIndex:4,
+            speed: [0, 3, 4, 5, 6, 6, 6, 7, 7],
+            might: [0, 2, 3, 3, 3, 4, 5, 6, 7],
+            sanity: [0, 1, 2, 3, 4, 5, 5, 6, 7],
+            knowledge: [0, 2, 3, 4, 4, 5, 6, 6, 6],
+            about: 'small descriptions of the character will be here ',
+            age: 9,
             birthday: 'not real sure ',
-            hobbies:['thinngs','more things'],
-            fears:'spoops',
-            chosen:false,
-            name:'character3'
+            hobbies: [],
+            fears: 'spoops',
+            chosen: false,
+            name: 'Missy Dubourde'
+
+        },
+        {
+            color: 'orange',
+            speedIndex:4,
+            mightIndex:4,
+            sanityIndex:3,
+            knowledgeIndex:3,
+            speed: [0, 4, 4, 4, 4, 5, 6, 8, 8],
+            might: [0, 2, 2, 3, 3, 4, 4, 6, 7],
+            sanity: [0, 1, 2, 3, 4, 4, 5, 5, 5],
+            knowledge: [0, 1, 2, 3, 4, 4, 5, 5, 5],
+            about: 'small descriptions of the character will be here ',
+            age: 8,
+            birthday: 'not real sure ',
+            hobbies: [],
+            fears: 'spoops',
+            chosen: false,
+            name: 'Zoe Ingstrom'
+
+        },
+        {
+            color: 'blue',
+            speedIndex:3,
+            mightIndex:4,
+            sanityIndex:3,
+            knowledgeIndex:4,
+            speed: [0, 2, 3, 3, 5, 5, 6, 6, 7],
+            might: [0, 2, 3, 3, 4, 5, 5, 5, 6],
+            sanity: [0, 4, 4, 4, 5, 6, 7, 8, 8],
+            knowledge: [0, 1, 3, 4, 4, 4, 5, 6, 6],
+            about: 'small descriptions of the character will be here ',
+            age: 37,
+            birthday: 'not real sure ',
+            hobbies: [],
+            fears: 'spoops',
+            chosen: false,
+            name: 'Madame Zostra'
+
+        },
+        {
+            color: 'blue',
+            speedIndex:4,
+            mightIndex:3,
+            sanityIndex:3,
+            knowledgeIndex:4,
+            speed: [0, 3, 4, 4, 4, 4, 6, 7, 8],
+            might: [0, 2, 2, 2, 4, 4, 5, 6, 6],
+            sanity: [0, 4, 4, 4, 5, 6, 7, 8, 8],
+            knowledge: [0, 4, 5, 5, 5, 5, 6, 6, 7],
+            about: 'small descriptions of the character will be here ',
+            age: 42,
+            birthday: 'not real sure ',
+            hobbies: [],
+            fears: 'spoops',
+            chosen: false,
+            name: 'Vivian Lopez'
+
+        },
+        {
+            color: 'red',
+            speedIndex:5,
+            mightIndex:3,
+            sanityIndex:3,
+            knowledgeIndex:3,
+            speed: [0, 4, 4, 4, 5, 6, 7, 7, 8],
+            might: [0, 2, 3, 3, 4, 5, 6, 6, 7],
+            sanity: [0, 1, 2, 3, 4, 5, 5, 5, 7],
+            knowledge: [0, 2, 3, 3, 4, 5, 5, 5, 7],
+            about: 'small descriptions of the character will be here ',
+            age: 20,
+            birthday: 'not real sure ',
+            hobbies: [],
+            fears: 'spoops',
+            chosen: false,
+            name: 'Darwin "Flash" Williams'
+
+        },
+        {
+            color: 'red',
+            speedIndex:5,
+            mightIndex:3,
+            sanityIndex:3,
+            knowledgeIndex:3,
+            speed: [0, 2, 2, 2, 3, 4, 5, 5, 6],
+            might: [0, 4, 5, 5, 6, 6, 7, 8, 8],
+            sanity: [0, 2, 2, 3, 4, 5, 5, 6, 7],
+            knowledge: [0, 2, 2, 3, 3, 5, 5, 6, 6],
+            about: 'small descriptions of the character will be here ',
+            age: 23,
+            birthday: 'not real sure ',
+            hobbies: [],
+            fears: 'spoops',
+            chosen: false,
+            name: 'Ox Bellows'
+
+        },
+        {
+            color: 'purple',
+            speedIndex:3,
+            mightIndex:3,
+            sanityIndex:3,
+            knowledgeIndex:5,
+            speed: [0, 3, 3, 4, 5, 6, 6, 7, 8],
+            might: [0, 3, 3, 3, 4, 5, 6, 7, 8],
+            sanity: [0, 3, 3, 3, 4, 5, 6, 6, 6],
+            knowledge: [0, 2, 3, 3, 4, 5, 6, 7, 8],
+            about: 'small descriptions of the character will be here ',
+            age: 18,
+            birthday: 'not real sure ',
+            hobbies: [],
+            fears: 'spoops',
+            chosen: false,
+            name: 'Heather Granville'
+
+        },
+        {
+            color: 'purple',
+            speedIndex: 4,
+            mightIndex: 3,
+            sanityIndex: 5,
+            knowledgeIndex: 3,
+            speed: [0, 2, 3, 4, 4, 4, 5, 6, 8],
+            might: [0, 3, 4, 4, 4, 4, 5, 6, 8],
+            sanity: [0, 1, 1, 2, 4, 4, 4, 5, 6],
+            knowledge: [0, 2, 3, 3, 4, 4, 5, 6, 8],
+            about: 'small descriptions of the character will be here ',
+            age: 21,
+            birthday: 'not real sure ',
+            hobbies: [],
+            fears: 'spoops',
+            chosen: false,
+            name: 'Jenny LeClerc'
+
+        },
+        {
+            color: 'green',
+            speedIndex: 4,
+            mightIndex: 3,
+            sanityIndex: 4,
+            knowledgeIndex: 3,
+            speed: [0, 3, 3, 3, 4, 6, 6, 7, 7],
+            might: [0, 2, 3, 3, 4, 5, 5, 6, 8],
+            sanity: [0, 3, 4, 4, 4, 5, 6, 6, 7],
+            knowledge: [0, 3, 4, 4, 5, 6, 7, 7, 8],
+            about: 'small descriptions of the character will be here ',
+            age: 13,
+            birthday: 'not real sure ',
+            hobbies: [],
+            fears: 'spoops',
+            chosen: false,
+            name: 'Peter Akimoto'
+
+        },
+        {
+            color: 'green',
+            speedIndex: 3,
+            speed: [0, 3, 4, 4, 4, 5, 6, , 7, 8],
+            mightIndex: 4,
+            might: [0, 2, 3, 3, 4, 5, 6, 6, 7],
+            sanityIndex: 4,
+            sanity: [0, 3, 3, 3, 4, 5, 6, 7, 8],
+            knowledgeIndex: 3,
+            knowledge: [0, 1, 3, 3, 5, , 5, 6, 6, 7],
+            about: 'small descriptions of the character will be here ',
+            age: 12,
+            birthday: 'not real sure ',
+            hobbies: [],
+            fears: 'spoops',
+            chosen: false,
+            name: 'Brandon Jaspers'
 
         },
     ],
 
     // need to make the the players array  that is passed through the post route
     players: {},
-    allReady:false
+    allReady: false
 }
 
 
@@ -2393,7 +2574,7 @@ router.post('/newGame', function (req, res, next) {
     //need to add the players to the game Model
 
 
-let j =1
+    let j = 1
 
     let playerObjectsArray = req.body.map(player => {
 
@@ -2410,9 +2591,9 @@ let j =1
             traitor: false,
             companions: [],
             movementSpeed: 0, // this is where the door should deduct the movement from when the player moves and is refreshed at the beginning of each turn ,
-            email:player,
-            ready:false
-            
+            email: player,
+            ready: false
+
 
 
 
@@ -2422,31 +2603,31 @@ let j =1
         let name = obj.email.split('.')
 
         let num = `player${j}`
-   gameModel.players      
- 
-   gameModel.players[num] = obj
-      
-         j++
+        gameModel.players
+
+        gameModel.players[num] = obj
+
+        j++
     })
-       
+
     console.log(j)
 
     db.Game.create({ game: gameModel })
         .then((data) => {
             // function that will put the players nested in the correct spot in the game data
 
-            
+
             let gameMaker = req.body
             console.log(data)
 
-            req.body.map(player=>{
+            req.body.map(player => {
                 console.log(player)
                 db.User.findOneAndUpdate(
                     { email: player },
-                { $push: { games: data._id } },
-                function (err, data) {
+                    { $push: { games: data._id } },
+                    function (err, data) {
 
-                }
+                    }
                 )
             })
 
@@ -2454,7 +2635,7 @@ let j =1
 
             // write a map here that will push each player to the array
 
-           
+
 
         })
 
@@ -2469,13 +2650,13 @@ router.get('/:id', function (req, res, callback) {
             res.json(Game)
         })
 })
-router.post('/:id',function(req,res,callback){
- 
-db.Game.findOneAndUpdate(  { _id : req.params.id},
-    {game:req.body}
-).then(data=>{    console.log(data)}
+router.post('/:id', function (req, res, callback) {
 
-)
+    db.Game.findOneAndUpdate({ _id: req.params.id },
+        { game: req.body }
+    ).then(data => { console.log(data) }
+
+    )
 })
 
 module.exports = router

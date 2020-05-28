@@ -3,6 +3,8 @@ import './MasterFloorplan.scss'
 import Start from '../Start/Start'
 import Room from '../Room/Room'
 import RoomName from "../RoomName/RoomName"
+import GameCard from '../GameCard/GameCard'
+import EndTurn from '../EndTurn/EndTurn'
 
 function MasterFloorplan(props) {
 
@@ -342,6 +344,8 @@ function MasterFloorplan(props) {
         <Room color='black' user={props.user} save={props.save}  rooms={props.rooms} changeState={props.changeState} coor='x12y10' open={props.rooms.GroundFloor.x12y10.open} doors={props.rooms.GroundFloor.x12y10.doors}  room={props.rooms.GroundFloor.x12y10}           x='x12' y='y10' ></Room>
         <Room color='black' user={props.user} save={props.save}  rooms={props.rooms} changeState={props.changeState} coor='x13y10' open={props.rooms.GroundFloor.x13y10.open} doors={props.rooms.GroundFloor.x13y10.doors}  room={props.rooms.GroundFloor.x13y10}           x='x13' y='y10' ></Room>
         <Room color='black' user={props.user} save={props.save}  rooms={props.rooms} changeState={props.changeState} coor='x14y10' open={props.rooms.GroundFloor.x14y10.open} doors={props.rooms.GroundFloor.x14y10.doors}  room={props.rooms.GroundFloor.x14y10}          x='x14' y='y10' ></Room>
+
+        
 
 
 

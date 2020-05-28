@@ -1,7 +1,9 @@
 import React from 'react'
 import './TopDoor.scss'
+import API from '../../../utils/API'
 
 function TopDoor(props) {
+    
 
     let playerKey
     let playersObj = props.rooms.players
@@ -124,7 +126,8 @@ function TopDoor(props) {
 
         }
         function moveUp(props) {
-
+            let movementSpeed = playersObj[playerKey].movementSpeed
+            let newMovementSpeed = movementSpeed - 1
             const setRooms = props.changeState
             const doors = props.rooms.doors
             const GroundFloor = props.rooms.GroundFloor
@@ -137,7 +140,7 @@ function TopDoor(props) {
             setRooms({
                 ...props.rooms,
                 //here
-                players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom , movementSpeed:newMovementSpeed} },
 
 
             })
@@ -148,7 +151,8 @@ function TopDoor(props) {
 
         function randomGroundFloor(props) {
 
-
+            let movementSpeed = playersObj[playerKey].movementSpeed
+            let newMovementSpeed = movementSpeed - 1
             let rArray2 = ['bl', 'tb', 'rb']
             let rArray3 = ['rbl', 'tbl', 'trb']
             let doorString2 = rArray2[getRandomInt(3)]
@@ -186,7 +190,7 @@ function TopDoor(props) {
                     },
 
                     //// HERE
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom, movementSpeed:newMovementSpeed } },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -211,7 +215,7 @@ function TopDoor(props) {
                         ...props.rooms.open, [newRoom]: true
                     },
                     //here
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom , movementSpeed:newMovementSpeed} },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -238,7 +242,7 @@ function TopDoor(props) {
                         ...props.rooms.open, [newRoom]: true
                     },
                     //here
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom, movementSpeed:newMovementSpeed } },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -262,7 +266,7 @@ function TopDoor(props) {
                         ...props.rooms.open, [newRoom]: true
                     },
                     //here
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom, movementSpeed:newMovementSpeed } },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -279,6 +283,9 @@ function TopDoor(props) {
                 })
 
             }
+
+            //check to see what the card is that needs to be drawn here 
+            console.log(newRoomObject.card)
 
 
 
@@ -303,9 +310,11 @@ function TopDoor(props) {
 
     return (<> {
         player ?
+        playersObj[playerKey].movementSpeed > 0 ? 
         playersObj[playerKey].turn ?
             <><button disabled={false} onClick={goUp} className={`topDoor  T${props.doors}`} ></button> </> :
-            null :
+            <><button disabled={true} onClick={goUp} className={`topDoor disabledT T${props.doors}`} ></button> </> :
+            <><button disabled={true} onClick={goUp} className={`topDoor disabledT T${props.doors}`} ></button> </>:
             <><button disabled={true} onClick={goUp} className={`topDoor disabledT T${props.doors}`} ></button> </>
     }
     </>)

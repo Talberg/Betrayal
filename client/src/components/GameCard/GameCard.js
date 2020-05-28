@@ -9,6 +9,7 @@ function GameCard (props){
 
     return(
         <><div className='gameCard'>
+            <EndTurn save={props.save} user={props.user} changeState={props.changeState} rooms={props.rooms} ></EndTurn>
             {/* map through the players and display them here  */}
             {playersKeys.map(player => 
                  {
@@ -16,7 +17,7 @@ function GameCard (props){
                     let character = playerObject.character
                     console.log(character)
 
-                    return(            <PlayerCard player={player}  character={character} ></PlayerCard>
+                    return(            <PlayerCard rooms={props.rooms} player={player} playerObject={playerObject} character={character} ></PlayerCard>
                         )
                 })}
             

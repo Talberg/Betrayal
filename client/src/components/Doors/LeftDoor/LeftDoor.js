@@ -96,6 +96,8 @@ function LeftDoor(props) {
         }
 
         function moveLeft(props) {
+            let movementSpeed = playersObj[playerKey].movementSpeed
+            let newMovementSpeed = movementSpeed - 1
 
             const setRooms = props.changeState
             const doors = props.rooms.doors
@@ -108,7 +110,7 @@ function LeftDoor(props) {
             let newRoomObject = index[Array[newRoomIndex]]
             setRooms({
                 ...props.rooms,
-                players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom ,movementSpeed:newMovementSpeed} },
 
 
             })
@@ -117,7 +119,8 @@ function LeftDoor(props) {
         }
 
         function randomGroundFloor(props) {
-
+            let movementSpeed = playersObj[playerKey].movementSpeed
+            let newMovementSpeed = movementSpeed - 1
             let rArray2 = ['rl', 'rb', 'tr']
             let rArray3 = ['trl', 'trb', 'rbl']
             let doorString2 = rArray2[getRandomInt(3)]
@@ -169,7 +172,7 @@ function LeftDoor(props) {
                     GroundFloorRoomsArray: newRoomsArray, open: {
                         ...props.rooms.open, [newRoom]: true
                     },
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom,movementSpeed:newMovementSpeed } },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -192,7 +195,7 @@ function LeftDoor(props) {
                     open: {
                         ...props.rooms.open, [newRoom]: true
                     },
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom ,movementSpeed:newMovementSpeed} },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -217,7 +220,7 @@ function LeftDoor(props) {
                     open: {
                         ...props.rooms.open, [newRoom]: true
                     },
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom ,movementSpeed:newMovementSpeed} },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -239,7 +242,7 @@ function LeftDoor(props) {
                     open: {
                         ...props.rooms.open, [newRoom]: true
                     },
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom,movementSpeed:newMovementSpeed } },
                     GroundFloor: {
                         ...GroundFloor, [newRoom]: {
                             ...roomStuff,
@@ -298,10 +301,13 @@ function LeftDoor(props) {
 
             {
                 player ?
+                playersObj[playerKey].movementSpeed > 0 ? 
                     playersObj[playerKey].turn ?
                     <><button disabled={false} onClick={goLeft} className={`leftDoor L${props.doors}`} ></button> </> :
-                    <></> :
-                    <><button disabled={true} onClick={goLeft} className={`leftDoor disabledL L${props.doors}`} ></button> </>}
+                    <><button disabled={true} onClick={goLeft} className={`leftDoor disabledL L${props.doors}`} ></button></> :
+                    <><button disabled={true} onClick={goLeft} className={`leftDoor disabledL L${props.doors}`} ></button> </>:
+                    <><button disabled={true} onClick={goLeft} className={`leftDoor disabledL L${props.doors}`} ></button> </>
+                    }
         </>
 
 
