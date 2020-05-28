@@ -305,7 +305,7 @@ function TopDoor(props) {
         player ?
         playersObj[playerKey].turn ?
             <><button disabled={false} onClick={goUp} className={`topDoor  T${props.doors}`} ></button> </> :
-            null :
+            <><button disabled={true} onClick={goUp} className={`topDoor disabledT T${props.doors}`} ></button> </> :
             <><button disabled={true} onClick={goUp} className={`topDoor disabledT T${props.doors}`} ></button> </>
     }
     </>)

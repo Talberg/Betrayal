@@ -17,7 +17,7 @@ function GameCard (props){
                     let character = playerObject.character
                     console.log(character)
 
-                    return(            <PlayerCard player={player}  character={character} ></PlayerCard>
+                    return(            <PlayerCard rooms={props.rooms} player={player} playerObject={playerObject} character={character} ></PlayerCard>
                         )
                 })}
             

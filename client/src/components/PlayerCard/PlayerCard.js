@@ -3,34 +3,42 @@ import './PlayerCard.scss'
 
 function PlayerCard(props) {
 
+    // set the movement speed to the current speed when the game loads 
+
+console.log(props.playerObject)
     let character = props.character
-    return (<div className='playerCard'>
+    return (<div className={ `playerCard ${character.color}`} >
         <div className='playerNumber'>
             <p> {props.player}</p>
         </div>
+        <strong><hr></hr></strong>
         <div className="characterName">
-            <p >{props.character.name}</p>
+            <p ><strong>{props.character.name}</strong></p>
         </div>
         <hr className='line1'></hr>
         <div className='speedMight'>
             <ul>
-                <li>Speed: {character.speed} </li>
-                <li>Might: {character.might} </li>
+            <strong><u>
+                <li>Speed: {character.speed[character.speedIndex]} </li>
+                <li>Might: {character.might[character.mightIndex]} </li>
+                </u></strong>
             </ul>
         </div>
         <div className='knowledgeSanity'>
             <ul>
-                <li>Knowledge: {character.knowledge} </li>
-                <li>Sanity: {character.sanity} </li>
+            <strong><u>
+                <li>Knowledge: {character.knowledge[character.knowledgeIndex]} </li>
+                <li>Sanity: {character.sanity[character.sanityIndex]} </li>
+                </u></strong>
             </ul>
         </div>
         <hr className='line2'  ></hr>
+        <div className='movementSpeed' >
+            <p>Moves Left : {props.playerObject.movementSpeed} </p>
+        </div>
 
 
 
-        <div className='companions' > {character.companions}</div>
-
-        <div className='items' > {character.companions}</div>
 
     </div>)
 

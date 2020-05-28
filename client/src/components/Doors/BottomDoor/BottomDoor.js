@@ -56,9 +56,9 @@ function BottomDoor(props) {
 
     {
         playersObj.player1.email.toString() === props.user.user.email.toString() ? set1() :
-        playersObj.player2.email.toString() === props.user.user.email.toString() ? set2() :
-            playersObj.player3.email === props.user.user.email ? set3() :
-                playersObj.player4.email === props.user.user.email ? set4() : userLocation = "nope"
+            playersObj.player2.email.toString() === props.user.user.email.toString() ? set2() :
+                playersObj.player3.email === props.user.user.email ? set3() :
+                    playersObj.player4.email === props.user.user.email ? set4() : userLocation = "nope"
     }
 
     let player = props.location.toString() === userLocation.toString()
@@ -69,6 +69,9 @@ function BottomDoor(props) {
     function goDown() {
 
 
+        // make the moveSpeed of the current player 
+        let currentMoveSpeed = playersObj[playerNum]
+        let newMoveSpeed = player
 
         let splitY = props.y.split('y')
         let Y = parseInt(splitY[1])
@@ -98,10 +101,22 @@ function BottomDoor(props) {
 
         function moveDown(props) {
 
+            //movemnet speed number 
+            let currentMoveSpeed = props.rooms.players[playerNum]
+            console.log(currentMoveSpeed.movementSpeed)
+            newMoveSpeed = currentMoveSpeed.movementSpeed - 1
+            console.log(newMoveSpeed)
+           
             const setRooms = props.changeState
             setRooms({
                 ...props.rooms,
-                players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom } },
+                players: {
+                    ...playersObj, [playerNum]: {
+                        ...playerStuff,
+                         location: newRoom,
+                         movementSpeed: newMoveSpeed ,
+                    }
+                },
 
 
             })
@@ -265,15 +280,16 @@ function BottomDoor(props) {
 
     }
 
-
+//if movement speed is  < 0
     return (<>
         {
-        player ? 
-        playersObj[playerKey].turn ?
-            <><button disabled={false} onClick={goDown} className={`bottomDoor B${props.doors}`} ></button> </> :
-            <> </> :
-            <><button disabled={true} onClick={goDown} className={`bottomDoor disabledB B${props.doors}`} ></button>
-            </>}
+            player ? 
+                
+                playersObj[playerKey].turn ?
+                    <><button disabled={false} onClick={goDown} className={`bottomDoor B${props.doors}`} ></button> </> :
+                    <> <button disabled={true} onClick={goDown} className={`bottomDoor disabledB B${props.doors}`} ></button> </> :
+                <><button disabled={true} onClick={goDown} className={`bottomDoor disabledB B${props.doors}`} ></button>
+                </>}
     </>)
 }
 

@@ -300,7 +300,7 @@ function LeftDoor(props) {
                 player ?
                     playersObj[playerKey].turn ?
                     <><button disabled={false} onClick={goLeft} className={`leftDoor L${props.doors}`} ></button> </> :
-                    <></> :
+                    <><button disabled={true} onClick={goLeft} className={`leftDoor disabledL L${props.doors}`} ></button></> :
                     <><button disabled={true} onClick={goLeft} className={`leftDoor disabledL L${props.doors}`} ></button> </>}
         </>
 
