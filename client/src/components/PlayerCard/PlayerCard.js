@@ -7,6 +7,7 @@ function PlayerCard(props) {
 
 console.log(props.playerObject)
     let character = props.character
+    let playerObject = props.rooms.players[props.player]
     return (<div className={ `playerCard ${character.color}`} >
         <div className='playerNumber'>
             <p> {props.player}</p>
@@ -30,6 +31,17 @@ console.log(props.playerObject)
                 <li>Knowledge: {character.knowledge[character.knowledgeIndex]} </li>
                 <li>Sanity: {character.sanity[character.sanityIndex]} </li>
                 </u></strong>
+            </ul>
+        </div>
+        <div className='items'  >
+            <h3>Items :</h3>
+            <hr></hr>
+            <ul>
+                {props.playerObject.item.map( item=>{
+                    return(
+                    <li><button>{item.title}</button></li>
+                    )
+                })}
             </ul>
         </div>
         <hr className='line2'  ></hr>

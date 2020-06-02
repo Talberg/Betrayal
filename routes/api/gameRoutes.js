@@ -2233,8 +2233,8 @@ const gameModel = {
         Patio: {
             name: 'Patio',
             doors: 3,
-            card: '',
-            exit: 'e',
+            card: 'e',
+            exit: false,
             entry: ''
         },
         DinningRoom: {
@@ -2310,6 +2310,133 @@ const gameModel = {
 
 
     },
+    OmenArray: [
+        'SpiritBoard',
+        'Spear',
+        'Skull',
+        'Ring',
+        'Medallion',
+        'Mask',
+        'Madman',
+        'HollySymbol',
+        'Girl',
+        'Dog',
+        'Crystal Ball',
+        'Book',
+        'Bite'
+        ,],
+    Omen: {
+        SpiritBoard: {
+            description:'Before moving you may look at the top tile ',
+            action:['item'],
+            flavorText:'A board with letters and numbers to call the dead...',
+            use:['isHaunt?','if haunt then', 'if not you may look at the top of the tiles, store that in the next tile spot on the game.'],
+            ifLost:false,
+            companion:false,
+        },
+        Spear: {
+            description:'You roll 2 extra dice when making a Might roll with this weapon (max 8 dice)  ',
+            action:['item'],
+            flavorText:'A weapon pulsing with power...',
+            use:['spearFunction'],
+            ifLost:false,
+            companion:false,
+        },
+        Skull: {
+            description:'If you take mental damage you can take it ALL as physical instead',
+            action:['item'],
+            flavorText:'A skull, cracked and missing teeth....',
+            use:['skullFunction'],
+            ifLost:false,
+            companion:false,
+        },
+        Ring: {
+            description:'If you attack an opponent that has a sanity you can roll with sanity rather than might and they take mental damage not physical ',
+            action:['item'],
+            flavorText:'A battered ring with an incomprehensible inscription...',
+            use:['ringFunction'],
+            ifLost:false,
+            companion:false,
+        },
+        Medallion: {
+            description:'You are immune to  the effects ok the Pentagram Chamber,Crypt,and Graveyard ',
+            action:['items'],
+            flavorText:'A medallion inscribed with a pentagram....',
+            use:['medallionFunction'],
+            ifLost:false,
+            companion:false,
+        },
+        Mask: {
+            description:'sanity roll-----   4+: put on or take off the mask(put on : gain 2 knowledge and lose 2 sanity|| take off: gain 2 sanity and lose 2 knowledge ), 3-0 : Cant use mask this turn ',
+            action:['item'],
+            flavorText:'A somber mask to hide your intentions',
+            use:['maskFunction'],
+            ifLost:false,
+            companion:true,
+        },
+        Madman:{
+            description:'Gain 2 Might and 1 Sanity ',
+            action:'Add madman to companion array ,Gain 2 Might and 1 Sanity'['item','sanity-Up-1','might-Up-2'],
+            use:['madmanFunction'],
+            flavorText:'A raving, frothing madman!',
+            ifLost:'lose 1 sanity and 2 might ',
+            companion:true,
+
+        },
+        HollySymbol: {
+            description:'Gain 2 sanity  ',
+            action:['sanity-Up-2'],
+            flavorText:'A symbol of calm in an upsetting world',
+            use:['holySymbol'],
+            ifLost:['sanity-Down-2'],
+            companion:false,
+
+        },
+        Girl: {
+            description:'Gain 1 sanity and 1 knowledge ',
+            action:['item','knowledge-Up-1','sanity-Up-1'],
+            flavorText:'A Girl',
+            use:['maskFunction'],
+            ifLost:'lose 1 sanity and 1 knowledge ',
+            companion:true,
+
+        },
+        Dog: {
+            description:'Gain 1 Might and 1 Sanity',
+            action: ['item'],
+            flavorText:'',
+            use:['dogFunction'],
+            ifLost:'lose 1 sanity and 1 might ',
+            companion:true,
+
+
+        },
+        CrystalBall: {
+            description: ' knowledge roll --------   4+ : Search Event or Item cards and put it on the top of the deck, 1-3 : You avert your eyes and lose 1 Sanity, 0 : You stare into hell, lose 2 Sanity',
+            action:  ['item'],
+            flavorText: 'Hazy images appear in the glass....',
+            use:['crystalBallFunction'],
+            ifLost: false,
+            companion: false
+
+        },
+        Book: {
+            description: 'Gain 2 Knowledge now , if lost lose 2 Knowledge',
+            action: 'Gain 2 Knowledge'['item','knowledge-Up-2'],
+            flavorText: 'A diary or lab notes? Ancient script or modern ravings?',
+            ifLost: ['sanity-Down-2','remove-item'],
+            companion: false
+
+        },
+        Bite: {
+            description: 'You are bitten by a mysterious shadow, might roll to save, you must beat ',
+            action: 'bite function here'['attack-might-4'],                                                    // might 4 attack roll defendable, 
+            flavorText: 'A growl, then sent of death. Pain. Darkness.Gone',
+            ifLost: false,
+            companion: false
+        }
+
+    },
     GroundFloorRoomsArray: [
         'AbandonedRoom',
         'BallRoom',
@@ -2334,10 +2461,10 @@ const gameModel = {
     CharacterArray: [
         {
             color: 'white',
-            speedIndex:4,
-            mightIndex:3,
-            sanityIndex:3,
-            knowledgeIndex:5,
+            speedIndex: 4,
+            mightIndex: 3,
+            sanityIndex: 3,
+            knowledgeIndex: 5,
             speed: [0, 2, 2, 4, 4, 5, 5, 6, 6],
             might: [0, 1, 2, 3, 4, 5, 5, 6, 6],
             sanity: [0, 1, 3, 3, 4, 5, 5, 6, 7],
@@ -2351,10 +2478,10 @@ const gameModel = {
         },
         {
             color: 'white',
-            speedIndex:3,
-            mightIndex:3,
-            sanityIndex:5,
-            knowledgeIndex:4,
+            speedIndex: 3,
+            mightIndex: 3,
+            sanityIndex: 5,
+            knowledgeIndex: 4,
             speed: [0, 2, 3, 3, 4, 5, 6, 7, 7],
             might: [0, 1, 2, 2, 4, 4, 5, 5, 7],
             sanity: [0, 3, 4, 5, 5, 6, 7, 7, 8],
@@ -2370,10 +2497,10 @@ const gameModel = {
         },
         {
             color: 'orange',
-            speedIndex:3,
-            mightIndex:4,
-            sanityIndex:3,
-            knowledgeIndex:4,
+            speedIndex: 3,
+            mightIndex: 4,
+            sanityIndex: 3,
+            knowledgeIndex: 4,
             speed: [0, 3, 4, 5, 6, 6, 6, 7, 7],
             might: [0, 2, 3, 3, 3, 4, 5, 6, 7],
             sanity: [0, 1, 2, 3, 4, 5, 5, 6, 7],
@@ -2389,10 +2516,10 @@ const gameModel = {
         },
         {
             color: 'orange',
-            speedIndex:4,
-            mightIndex:4,
-            sanityIndex:3,
-            knowledgeIndex:3,
+            speedIndex: 4,
+            mightIndex: 4,
+            sanityIndex: 3,
+            knowledgeIndex: 3,
             speed: [0, 4, 4, 4, 4, 5, 6, 8, 8],
             might: [0, 2, 2, 3, 3, 4, 4, 6, 7],
             sanity: [0, 1, 2, 3, 4, 4, 5, 5, 5],
@@ -2408,10 +2535,10 @@ const gameModel = {
         },
         {
             color: 'blue',
-            speedIndex:3,
-            mightIndex:4,
-            sanityIndex:3,
-            knowledgeIndex:4,
+            speedIndex: 3,
+            mightIndex: 4,
+            sanityIndex: 3,
+            knowledgeIndex: 4,
             speed: [0, 2, 3, 3, 5, 5, 6, 6, 7],
             might: [0, 2, 3, 3, 4, 5, 5, 5, 6],
             sanity: [0, 4, 4, 4, 5, 6, 7, 8, 8],
@@ -2427,10 +2554,10 @@ const gameModel = {
         },
         {
             color: 'blue',
-            speedIndex:4,
-            mightIndex:3,
-            sanityIndex:3,
-            knowledgeIndex:4,
+            speedIndex: 4,
+            mightIndex: 3,
+            sanityIndex: 3,
+            knowledgeIndex: 4,
             speed: [0, 3, 4, 4, 4, 4, 6, 7, 8],
             might: [0, 2, 2, 2, 4, 4, 5, 6, 6],
             sanity: [0, 4, 4, 4, 5, 6, 7, 8, 8],
@@ -2446,10 +2573,10 @@ const gameModel = {
         },
         {
             color: 'red',
-            speedIndex:5,
-            mightIndex:3,
-            sanityIndex:3,
-            knowledgeIndex:3,
+            speedIndex: 5,
+            mightIndex: 3,
+            sanityIndex: 3,
+            knowledgeIndex: 3,
             speed: [0, 4, 4, 4, 5, 6, 7, 7, 8],
             might: [0, 2, 3, 3, 4, 5, 6, 6, 7],
             sanity: [0, 1, 2, 3, 4, 5, 5, 5, 7],
@@ -2465,10 +2592,10 @@ const gameModel = {
         },
         {
             color: 'red',
-            speedIndex:5,
-            mightIndex:3,
-            sanityIndex:3,
-            knowledgeIndex:3,
+            speedIndex: 5,
+            mightIndex: 3,
+            sanityIndex: 3,
+            knowledgeIndex: 3,
             speed: [0, 2, 2, 2, 3, 4, 5, 5, 6],
             might: [0, 4, 5, 5, 6, 6, 7, 8, 8],
             sanity: [0, 2, 2, 3, 4, 5, 5, 6, 7],
@@ -2484,10 +2611,10 @@ const gameModel = {
         },
         {
             color: 'purple',
-            speedIndex:3,
-            mightIndex:3,
-            sanityIndex:3,
-            knowledgeIndex:5,
+            speedIndex: 3,
+            mightIndex: 3,
+            sanityIndex: 3,
+            knowledgeIndex: 5,
             speed: [0, 3, 3, 4, 5, 6, 6, 7, 8],
             might: [0, 3, 3, 3, 4, 5, 6, 7, 8],
             sanity: [0, 3, 3, 3, 4, 5, 6, 6, 6],
@@ -2562,7 +2689,17 @@ const gameModel = {
 
     // need to make the the players array  that is passed through the post route
     players: {},
-    allReady: false
+    allReady: false,
+    currentCard: {
+        display:'hidden',
+        type:'Type',
+        title:''
+    },
+    omenCount: 0,
+    nextItem: false,
+    nextEvent: false,
+    nextRoom: false,
+
 }
 
 

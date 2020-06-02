@@ -79,6 +79,10 @@ export default {
       
     }
     console.log(rollTotal)
+  },
+  loseKnowledge(mulitplier,rooms,player){
+    
+
   }
   
 

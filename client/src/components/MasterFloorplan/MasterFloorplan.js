@@ -5,6 +5,7 @@ import Room from '../Room/Room'
 import RoomName from "../RoomName/RoomName"
 import GameCard from '../GameCard/GameCard'
 import EndTurn from '../EndTurn/EndTurn'
+import CardDisplay from '../CardDisplay/CardDisplay'
 
 function MasterFloorplan(props) {
 
@@ -14,6 +15,7 @@ function MasterFloorplan(props) {
 
 
     return (<><div className='masterFloorplan'>
+        <CardDisplay user={props.user} rooms={props.rooms} changeState={props.changeState} ></CardDisplay>
         <RoomName color='black'   rooms={props.rooms} changeState={props.changeState} coor='x0y0' open={props.rooms.GroundFloor.x0y0.open} name={props.rooms.GroundFloor.x0y0.name}    room={props.rooms.GroundFloor.x0y0}           x='x0 ' y='y0' ></RoomName>
 <RoomName color='black'   rooms={props.rooms} changeState={props.changeState} coor='x1y0' open={props.rooms.GroundFloor.x1y0.open} name={props.rooms.GroundFloor.x1y0.name}    room={props.rooms.GroundFloor.x1y0}           x='x1 ' y='y0' ></RoomName>
 <RoomName color='black'   rooms={props.rooms} changeState={props.changeState} coor='x2y0' open={props.rooms.GroundFloor.x2y0.open} name={props.rooms.GroundFloor.x2y0.name}    room={props.rooms.GroundFloor.x2y0}           x='x2 ' y='y0' ></RoomName>

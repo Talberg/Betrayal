@@ -1,6 +1,7 @@
 import React from 'react'
 import './LeftDoor.scss'
 import { get } from 'mongoose';
+import CardDisplay from '../../CardDisplay/CardDisplay';
 
 
 function LeftDoor(props) {
@@ -166,56 +167,468 @@ function LeftDoor(props) {
 
             if (newRoomObject.doors === 1) {
                 let newDoors = 'r'
-
-                setRooms({
-                    ...props.rooms,
-                    GroundFloorRoomsArray: newRoomsArray, open: {
-                        ...props.rooms.open, [newRoom]: true
-                    },
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom,movementSpeed:newMovementSpeed } },
-                    GroundFloor: {
-                        ...GroundFloor, [newRoom]: {
-                            ...roomStuff,
-                            open: true,
-                            numDoors: newRoomObject.doors,
-                            doors: newDoors,
-                            name: newRoomObject.name,
-                            entry: 'r'
-
+                if(newRoomObject.card){
+                    newMovementSpeed = 0
+                    if (newRoomObject.card === 'o') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
                         }
-                    },
-                    doors: { ...doors, [newRoom]: [newDoors] }
-                })
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+
+
+
+                        setRooms({
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                            currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom, movementSpeed: newMovementSpeed } },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: newRoomObject.doors,
+                                    doors: newDoors,
+                                    name: newRoomObject.name,
+                                    entry: 't'
+                                    , card: newRoomObject.card
+
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [newDoors] }
+                        })
+
+
+
+                    }
+                    if (newRoomObject.card === 'e') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
+                        }
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+
+
+
+                        setRooms({
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                            currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom, movementSpeed: newMovementSpeed } },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: newRoomObject.doors,
+                                    doors: newDoors,
+                                    name: newRoomObject.name,
+                                    entry: 't'
+                                    , card: newRoomObject.card
+
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [newDoors] }
+                        })
+
+
+
+                    }
+                    if (newRoomObject.card === 'i') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
+                        }
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+
+
+
+                        setRooms({
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                            currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom, movementSpeed: newMovementSpeed } },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: newRoomObject.doors,
+                                    doors: newDoors,
+                                    name: newRoomObject.name,
+                                    entry: 't'
+                                    , card: newRoomObject.card
+
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [newDoors] }
+                        })
+
+
+
+                    }
+                }
+
+              
             }
             else if (newRoomObject.doors === 2) {
-
-                setRooms({
-                    ...props.rooms,
-                    GroundFloorRoomsArray: newRoomsArray,
-                    open: {
-                        ...props.rooms.open, [newRoom]: true
-                    },
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom ,movementSpeed:newMovementSpeed} },
-                    GroundFloor: {
-                        ...GroundFloor, [newRoom]: {
-                            ...roomStuff,
-                            open: true,
-                            numDoors: newRoomObject.doors,
-                            doors: doorString2,
-                            name: newRoomObject.name,
-                            entry: 'r'
-
+                if(newRoomObject.card){
+                    newMovementSpeed = 0
+                    if (newRoomObject.card === 'o') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
                         }
-                    },
-                    doors: { ...doors, [newRoom]: [doorString2] }
-                })
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+
+
+
+                        setRooms({
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                            currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom ,movementSpeed:newMovementSpeed} },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: newRoomObject.doors,
+                                    doors: doorString2,
+                                    name: newRoomObject.name,
+                                    entry: 'r'
+        
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [doorString2] }
+                        })
+
+
+
+                    }
+                    if (newRoomObject.card === 'e') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
+                        }
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+
+
+
+                        setRooms({
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                            currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom ,movementSpeed:newMovementSpeed} },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: newRoomObject.doors,
+                                    doors: doorString2,
+                                    name: newRoomObject.name,
+                                    entry: 'r'
+        
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [doorString2] }
+                        })
+
+
+
+                    }
+                    if (newRoomObject.card === 'i') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
+                        }
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+
+
+
+                        setRooms({
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                            currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom ,movementSpeed:newMovementSpeed} },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: newRoomObject.doors,
+                                    doors: doorString2,
+                                    name: newRoomObject.name,
+                                    entry: 'r'
+        
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [doorString2] }
+                        })
+
+
+
+                    }
+                }
+                else{
+                    setRooms({
+                        ...props.rooms,
+                       
+                        GroundFloorRoomsArray: newRoomsArray,
+                        open: {
+                            ...props.rooms.open, [newRoom]: true
+                        },
+                        players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom ,movementSpeed:newMovementSpeed} },
+                        GroundFloor: {
+                            ...GroundFloor, [newRoom]: {
+                                ...roomStuff,
+                                open: true,
+                                numDoors: newRoomObject.doors,
+                                doors: doorString2,
+                                name: newRoomObject.name,
+                                entry: 'r'
+    
+                            }
+                        },
+                        doors: { ...doors, [newRoom]: [doorString2] }
+                    })
+                }
+
+               
+                if(newRoomObject.card){
+                   //draw card function here using a switch case 
+
+                
+                }
             }
             else if (newRoomObject.doors === 3) {
 
+                if(newRoomObject.card){
+                    newMovementSpeed = 0
+                    if (newRoomObject.card === 'o') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
+                        }
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
 
 
-                setRooms({
+
+                        setRooms({
+                    
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                                    currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom ,movementSpeed:newMovementSpeed} },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: newRoomObject.doors,
+                                    doors: doorString3,
+                                    name: newRoomObject.name,
+                                    entry: 'r'
+        
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [doorString3] }
+                        })
+
+
+
+                    }
+                    if (newRoomObject.card === 'e') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
+                        }
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+
+
+
+                        setRooms({
+                    
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                                    currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom ,movementSpeed:newMovementSpeed} },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: newRoomObject.doors,
+                                    doors: doorString3,
+                                    name: newRoomObject.name,
+                                    entry: 'r'
+        
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [doorString3] }
+                        })
+
+
+
+                    }
+                    if (newRoomObject.card === 'i') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
+                        }
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+
+
+
+                        setRooms({
+                    
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                                    currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom ,movementSpeed:newMovementSpeed} },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: newRoomObject.doors,
+                                    doors: doorString3,
+                                    name: newRoomObject.name,
+                                    entry: 'r'
+        
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [doorString3] }
+                        })
+
+
+
+                    }
+                }
+                else{ 
+                     setRooms({
+                    
                     ...props.rooms,
+                    
                     GroundFloorRoomsArray: newRoomsArray,
                     open: {
                         ...props.rooms.open, [newRoom]: true
@@ -234,28 +647,171 @@ function LeftDoor(props) {
                     },
                     doors: { ...doors, [newRoom]: [doorString3] }
                 })
+
+                }
+
+              
             }
             else {
-                setRooms({
-                    ...props.rooms,
-                    GroundFloorRoomsArray: newRoomsArray,
-                    open: {
-                        ...props.rooms.open, [newRoom]: true
-                    },
-                    players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom,movementSpeed:newMovementSpeed } },
-                    GroundFloor: {
-                        ...GroundFloor, [newRoom]: {
-                            ...roomStuff,
-                            open: true,
-                            numDoors: 4,
-                            doors: 'trbl',
-                            name: newRoomObject.name,
-                            entry: 'r'
-
+                if(newRoomObject.card){
+                    newMovementSpeed = 0
+                    if (newRoomObject.card === 'o') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
                         }
-                    },
-                    doors: { ...doors, [newRoom]: [doorString3] }
-                })
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+
+
+
+                        setRooms({
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                            currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom,movementSpeed:newMovementSpeed } },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: 4,
+                                    doors: 'trbl',
+                                    name: newRoomObject.name,
+                                    entry: 'r'
+        
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [doorString3] }
+                        })
+
+
+                    }
+                    if (newRoomObject.card === 'e') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
+                        }
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+
+
+
+                        setRooms({
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                            currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom,movementSpeed:newMovementSpeed } },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: 4,
+                                    doors: 'trbl',
+                                    name: newRoomObject.name,
+                                    entry: 'r'
+        
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [doorString3] }
+                        })
+
+
+                    }
+                    if (newRoomObject.card === 'i') {
+                        //omen draw
+                        let omens = props.rooms.Omen
+                        let omensArray = props.rooms.OmenArray
+                        let omenIndex = getRandomInt(omensArray.length)
+                        let max = omensArray.length - 1
+                        let randomOmenCard = omensArray[omenIndex]
+                        let card = omens[randomOmenCard]
+                        let cardObj =
+                        {
+                            ...card,
+                            display: 'shown',
+                            type: 'Omen',
+                            title: randomOmenCard,
+                        }
+                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+
+
+
+                        setRooms({
+                            ...props.rooms,
+                            OmenArray: newOmenArray,
+                            currentCard: cardObj,
+                            GroundFloorRoomsArray: newRoomsArray,
+                            open: {
+                                ...props.rooms.open, [newRoom]: true
+                            },
+                            players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom,movementSpeed:newMovementSpeed } },
+                            GroundFloor: {
+                                ...GroundFloor, [newRoom]: {
+                                    ...roomStuff,
+                                    open: true,
+                                    numDoors: 4,
+                                    doors: 'trbl',
+                                    name: newRoomObject.name,
+                                    entry: 'r'
+        
+                                }
+                            },
+                            doors: { ...doors, [newRoom]: [doorString3] }
+                        })
+
+
+                    }
+                }
+                else{
+                    setRooms({
+                        ...props.rooms,
+                
+                        GroundFloorRoomsArray: newRoomsArray,
+                        open: {
+                            ...props.rooms.open, [newRoom]: true
+                        },
+                        players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom,movementSpeed:newMovementSpeed } },
+                        GroundFloor: {
+                            ...GroundFloor, [newRoom]: {
+                                ...roomStuff,
+                                open: true,
+                                numDoors: 4,
+                                doors: 'trbl',
+                                name: newRoomObject.name,
+                                entry: 'r'
+    
+                            }
+                        },
+                        doors: { ...doors, [newRoom]: [doorString3] }
+                    })
+                }
+                
 
             }
 

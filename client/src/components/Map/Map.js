@@ -60,7 +60,7 @@ function Map(props) {
     return (<>
     {/* change this from playerReady to allReady */}
     {all? <><div className='map'><MasterFloorplan save={props.save} user={props.user} changeState={props.changeState} rooms={props.rooms}></MasterFloorplan><GameCard  save={props.save} user={props.user} changeState={props.changeState} rooms={props.rooms}   ></GameCard>            
-<GroundFloor/></div></> :
+</div></> :
     <CharacterSelect save={props.save} user={props.user} changeState={props.changeState} rooms={props.rooms} ></CharacterSelect> }
     
     
