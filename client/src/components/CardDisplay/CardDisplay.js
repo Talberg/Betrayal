@@ -11,16 +11,9 @@ function CardDisplay(props){
 
         // player trait - or + player
         // do a currentCard.action.map()
-        currentCard.action.map(action =>{
-            console.log(action)
-            if (action === 'item'){
-                console.log('made it to the item')
-            }
-            
-          
-        }
+       
 
-        )
+        
         
 
         
@@ -29,34 +22,81 @@ function CardDisplay(props){
         console.log(props.user.user.email)
         playerKeys.map( player=>{
             if (props.user.user.email === props.rooms.players[player].email) {
-                console.log(true)
+               
+               let newItemArray = props.rooms.players[player].item
+               let newKnowledge = props.rooms.players[player].character.knowledgeIndex
+               
+               
+               
+               
+               console.log(newKnowledge)
+               
+               
+                currentCard.action.map(action =>{
+                    console.log(action)
+                    if (action === 'item'){
+                        console.log('made it to the item')
+                        
+                        newItemArray.push(currentCard)}
+                    let actionArray = action.split('-')
+                    if(actionArray[0]==='knowledge'){
+                      
+                        if(actionArray[1]==='Up'){
+                            console.log(` ${player} ${actionArray[0]} goes up by  ${actionArray[2]}`)
+                            //make knowledge on the players character needs to go up 
+                            newKnowledge = (parseInt(newKnowledge) + parseInt(actionArray[2]))
+                            console.log(newKnowledge)
+                            let knowledgeIndex = newKnowledge
+                            console.log(knowledgeIndex)
+                            props.changeState(
+                                {
+                                    ...props.rooms,
+                                    currentCard :closedCard,
+                                    players: {...props.rooms.players , 
+                                        [player] : {...props.rooms.players[player],  item:newItemArray, 
+                                        character:{
+                                            ...props.rooms.players[player].character,
+                                            knowledgeIndex:knowledgeIndex
+                                        }
+                                        } }
+            
+                                }
+                            )
+
+                            console.log(props.rooms.players[player].character.knowledgeIndex)
+                           
+
+                        }
+                        if(actionArray[1]==='Down'){
+                            console.log(` ${player} knowledge goes down by  ${actionArray[2]}`)
+                        }
+                    }
+
+                    console.log(actionArray[1])
+                    console.log(actionArray[2])
+                    console.log(actionArray[3])
+                    console.log(newKnowledge)
+
+                    
+                  
+                }
+        
+                )
                 let playerObj = props.rooms.players[player]
                  //if there is a function on the card then it should run here and then 
-                let itemFunction = currentCard.action
-                console.log(itemFunction)
-                let newItemArray = props.rooms.players[player].item
-                newItemArray.push(currentCard)
-                console.log(newItemArray)
+             
+               
+               
+               
                 // here is where the item will be put into the players array 
-                props.changeState(
-                    {
-                        ...props.rooms,
-                        currentCard :closedCard,
-                        players: {...props.rooms.players , 
-                            [player] : {...props.rooms.players[player],  item:newItemArray   } }
-
-                    }
-                )
+               
             }
         }
 
              
         )
         
-        props.changeState(
-            {...props.rooms,
-            currentCard :closedCard,}
-        )
+       
     }
     console.log(currentCard)
     return(<div className={`cardDisplay ${currentCard.display}`} >
@@ -73,6 +113,7 @@ function CardDisplay(props){
         <div className='cardDescription'>
 <p>{currentCard.description}</p>
         </div>
+        {/* show this if there is a roll that is needed from the player */}
         <div className='rollButton'> 
         <button>Roll</button>
         </div>

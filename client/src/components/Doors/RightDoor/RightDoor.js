@@ -308,6 +308,55 @@ function RightDoor(props) {
 
                     }
                 }
+                else{
+                    let omens = props.rooms.Omen
+                    let omensArray = props.rooms.OmenArray
+                    let omenIndex = getRandomInt(omensArray.length)
+                    let max = omensArray.length - 1
+                    let randomOmenCard = omensArray[omenIndex]
+                    let card = omens[randomOmenCard]
+                    let cardObj =
+                    {
+                        ...card,
+                         display: 'shown',
+                        type:'Omen',
+                        title:randomOmenCard,
+                    }
+
+
+
+
+
+
+
+
+                    let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
+                    setRooms({
+                        ...props.rooms,
+                        OmenArray: newOmenArray,
+                        currentCard: cardObj,
+                        GroundFloorRoomsArray: newRoomsArray,
+                        open: {
+                            ...props.rooms.open, [newRoom]: true
+                        },
+                        //here
+                        players: { ...playersObj, [playerNum]: { ...playerStuff, location: newRoom , movementSpeed:newMovementSpeed} },
+                        GroundFloor: {
+                            ...GroundFloor, [newRoom]: {
+                                ...roomStuff,
+                                open: true,
+                                numDoors: newRoomObject.doors,
+                                doors: newDoors,
+                                name: newRoomObject.name,
+                                entry: 'l'
+    
+                            }
+                        },
+                        doors: { ...doors, [newRoom]: [newDoors] }
+                    })
+
+
+                }
             }
             else if (newRoomObject.doors === 2) {
 

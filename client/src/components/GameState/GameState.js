@@ -5,7 +5,7 @@ import Map from '../Map/Map'
 import API from '../../utils/API'
 
 function GameState(props){
-    console.log(props)
+    
     const [game,saveGame]=useState()
     const [loaded,setLoaded] = useState({
         loaded:false
@@ -74,7 +74,7 @@ console.log(game)
 
 
 return(<div  >
-    {console.log(props.user)}
+   
     {props.user.loggedIn ? <> {rooms ? <><Map user={props.user} changeState={setRooms} rooms={rooms} save={setSave} ></Map></>:<> <h1>LOADING!!!!</h1></>} </> : <></> }
     
     {/* {rooms ? <><Map user={props.user} changeState={setRooms} rooms={rooms} ></Map></>:<> <h1>LOADING!!!!</h1></>} */}
