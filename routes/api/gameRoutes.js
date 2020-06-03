@@ -2325,10 +2325,208 @@ const gameModel = {
         'Book',
         'Bite'
         ,],
+    EventArray: [
+        'BloodyVision',
+        "BurningMan",
+        'ClosetDoor',
+        'CreepyPuppet',
+        'CreepyCrawlies',
+        'Debris',
+        'DisquietingSounds',
+        'DripDripDrip',
+        'FootSteps',
+        'Funeral',
+        'GraveDirt',
+
+    ],
+    Event: {
+        BloodyVision: {
+            description: 'You must attempt a sanity roll: 4+ : you steel yourself. Gain 1 Sanity || 2-3: Lose 1 Sanity',
+            action: ['bloodyVision'],
+            flavorText: 'The walls of thes room are damp with blood. The blood drips from the ceiling, down the walls, over the furniture, and onto your shoes. A blink it is gone......',
+            ifLost: false,
+            companion: false,
+
+        },
+        BurningMan: {
+            description: 'You must attempt a sanity roll: 4+ :  Gain 1 Sanity || 2-3: Explorer moved to Entrance Hall',
+            action: ['burningNam'],
+            flavorText: 'A man on fire runs at through the room. His skin bubbles and cracks as it falls from him',
+            ifLost: false,
+            companion: false,
+
+        },
+        ClosetDoor: {
+            description: 'Put Closet token here. Explorers may  roll 2 dice to try to open the closet|| 4:Draw item card || 2-3 : Draw event card || 0-1: Draw event cars and remove the closet token',
+            action: ['closetDoor'],
+            flavorText: 'That closet door is open ... just a crack. There must be something inside...',
+            ifLost: false,
+            companion: false,
+        },
+        CreepyCrawlies: {
+            description: 'Must attempt a Sanity Roll || 5+ : gain 1 sanity || 1-4: lose sanity || 0 : lose 2 sanity ',
+            action: ['creepyCrawlies'],
+            flavorText: 'Thousands of bugs spill out on your skin under your cloths and in your hair',
+            ifLost: false,
+            companion: false,
+        },
+        CreepyPuppet: {
+            description: 'The puppet attacks you with a might roll of 4, if you take damage the player with the spear gains 2 might(unless you have the spear)',
+            action: ['creepyPuppet'],
+            flavorText: 'You see one odf those dolls that gie you the willies. It jumps at you with a tiny spear',
+            ifLost: false,
+            companion: false,
+        },
+        Debris: {
+            description: 'You must attempt a speed roll|| 3+ :  Gain 1 Speed || 1-2: Explorer is Buried, take 1 die physical die || 0 :Explorer is Buried, take 2 die physical die  ',
+            action: ['debris'],
+            flavorText: 'Plaster falls from the walls and ceiling',
+            ifLost: false,
+            companion: false,
+        },
+        DisquietingSounds: {
+            description: 'Roll 6 die, if the total is greater than or equal to the omen count gain 1 sanity, if not take 1 die of mental damage  ',
+            action: ['disquietingSounds'],
+            flavorText: "A baby's cry, lost and abandoned. A scream. The crack of breaking glass . Then silence ",
+            ifLost: false,
+            companion: false,
+        },
+        DripDripDrip: {
+            description: 'Explores in this room roll 1 less die when in this room, leave a drip token here. ',
+            action: ['dripDripDrip'],
+            flavorText: 'A rhythmic sound that needles at your brain',
+            ifLost: false,
+            companion: false,
+        },
+        FootSteps: {
+            description: 'You roll 1 die, 2 if in the Chapel || 4 :  Gain 1 might along with nearest explorer|| 3: Gain 1 might, nearest player loses 1 sanity || 2 : lose 1 sanity || 1 : lose 1 speed || 0: everyone loses 1 from the trait of their choice.  ',
+            action: ['footSteps'],
+            flavorText: 'Floorboards creek slowly ',
+            ifLost: false,
+            companion: false,
+        },
+        Funeral: {
+            description: 'You must attempt a sanity roll|| 4+ :  Sanity up 1  || 2-3: lose 1 sanity || 0-1 :lose 1 might and 1 sanity , if the Graveyard or Crypt is open put your player there, your choice',
+            action: ['funeral'],
+            flavorText: 'You see an open coffin but.... YOU ARE INSIDE!  ',
+            ifLost: false,
+            companion: false,
+        },
+        GraveDirt:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['graveDirt'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+
+
+    },
+    ItemArray:[
+        'MedicalKit',
+        'LuckyStone',
+        'Idol',
+        'HealingSalve',
+        'Dynamite',
+        'DarkDice',
+        'Candle',
+        'Bottle',
+        'BloodDagger',
+        'Bell'
+    ],
+    Item:{
+        MedicalKit:{
+            description: 'Once per turn, you can attempt a knowledge roll to heal yourself or player in the same room || 8+ : Gain 3 points of physical traits || 6-7: gain up to 2 points physical || 4-5 : gain 1 point physical trait || 0-3 : nothing happens',
+            action: ['item'],
+            flavorText: 'A doctor bag, depleted of some critical resources ',
+            use:['medicalKit'],
+            ifLost: false,
+            companion: false,
+        },
+        LuckyStone:{
+            description: 'After each roll you may reroll and pick the higher roll, discard after use',
+            action: ['item'],
+            flavorText: 'A smooth, ordinary-looking rock. You sense it will bring you good fortune ',
+            use:['luckyStone'],
+            ifLost: false,
+            companion: false,
+        },
+        Idol:{
+            description: 'Every time you roll for an event, trait, or combat you may add 2 dice (up to 8), each time you do lose 1 sanity',
+            action: ['item'],
+            flavorText: 'Perhaps its chosen you for some greater purpose Like human sacrifice.',
+            use:['idol'],
+            ifLost: false,
+            companion: false,
+        },
+        HealingSalve:{
+            description: 'Use on self or player in the same room, heal up might or speed to starting value, discarded after use',
+            action: ['item'],
+            flavorText: 'A sticky paste in a shallow bowl',
+            use:['healingSalve'],
+            ifLost: false,
+            companion: false,
+        },
+        Dynamite:{
+            description: 'Instead of attacking you may throw the Dynamite through a door into an adjacent room. Everyone in that room that have a might and speed traits in that room must roll an speed attempt || 5+ : No damage || 0-4 : take 4 physical damage ',
+            action: ['item'],
+            flavorText: 'The fuse is not lit ..... yet',
+            use:['dynamite'],
+            ifLost: false,
+            companion: false,
+        },
+        DarkDice:{
+            description: 'Once per-turn, you cna roll 3 dice || 6: Move to the location of another player || 5: Move one other player ,in the same room as you, to adjacent room || 4: gain 1 physical trait point || 3: Move to adjacent room || 2: gain 1 mental trait point || 1: draw an event card || 0: reduce all your traits to the lowest value above the skull symbol ,discard dice.',
+            action: ['item'],
+            flavorText: 'Are you feeling lucky!?',
+            use:['darkDice'],
+            ifLost: false,
+            companion: false,
+        },
+        Candle:{
+            description: ' If you draw an event card, roll 1 additional die (max 8) for event trait rolls || If you have Book, Bell, and Candle , gain 2 in each trait. The first time you lose one of those 3 items you lose 2 of each trait',
+            action: ['item'],
+            flavorText: 'It makes the shadows move - at least, you hope it is doing that......',
+            use:['candle'],
+            ifLost: false,
+            companion: false,
+        },
+        Bottle :{
+            description: 'Once during your turn after the haunt is revealed, you can roll 3 dice and drink from the Bottle || 6: Choose a room, go there || 5: Gain 2 might and 2 speed || 4: gain 2 knowledge and 2 sanity || 3:gain 1 knowledge and lose 1 might || 2:lose 2 knowledge and 2 sanity || 1 : lose 2 might and 2 speed || 0: lose 2 from all traits ',
+            action: ['item'],
+            flavorText: 'An opaque vial containing a black liquid',
+            use:['bottle'],
+            ifLost: false,
+            companion: false,
+        },
+        BloodDagger:{
+            description: 'You roll 3 additional dice when making might attacks with this weapon, If you do then lose 1 speed || You cant use other weapons while using this one || This item cant be traded or dropped, if stolen, take 2 dice of physical damage',
+            action: ['item'],
+            flavorText: 'A nasty weapon. Needles and tubes extend from the handle ... an plunge right into your veins!',
+            use:['bloodDagger'],
+            ifLost: false,
+            companion: false,
+            weapon:true
+        },
+        Bell:{
+            description: 'Gain 1 sanity now || if lost lose 1 sanity || Once during your turn after the haunt is revealed , you may roll sanity || 5+ : Move any number unimpeded heros 1 space closer to you || 0-4 : The traitor can move any number of monster 1 space closer.  ',
+            action: ['item'],
+            flavorText: 'A brass bell that makes a resonant clang',
+            use:['bell'],
+            ifLost: false,
+            companion: false,
+        }
+
+
+
+    }
+    ,
+
     Omen: {
         SpiritBoard: {
             description: 'Before moving you may look at the top tile ',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'A board with letters and numbers to call the dead...',
             use: ['isHaunt?', 'if haunt then', 'if not you may look at the top of the tiles, store that in the next tile spot on the game.'],
             ifLost: false,
@@ -2336,7 +2534,7 @@ const gameModel = {
         },
         Spear: {
             description: 'You roll 2 extra dice when making a Might roll with this weapon (max 8 dice)  ',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'A weapon pulsing with power...',
             use: ['spear'],
             ifLost: false,
@@ -2344,7 +2542,7 @@ const gameModel = {
         },
         Skull: {
             description: 'If you take mental damage you can take it ALL as physical instead',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'A skull, cracked and missing teeth....',
             use: ['skull'],
             ifLost: false,
@@ -2352,7 +2550,7 @@ const gameModel = {
         },
         Ring: {
             description: 'If you attack an opponent that has a sanity you can roll with sanity rather than might and they take mental damage not physical ',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'A battered ring with an incomprehensible inscription...',
             use: ['ring'],
             ifLost: false,
@@ -2360,7 +2558,7 @@ const gameModel = {
         },
         Medallion: {
             description: 'You are immune to  the effects ok the Pentagram Chamber,Crypt,and Graveyard ',
-            action: ['item','knowledge-Up-1',],
+            action: ['item', 'knowledge-Up-1',],
             flavorText: 'A medallion inscribed with a pentagram....',
             use: ['medallion'],
             ifLost: false,
@@ -2368,7 +2566,7 @@ const gameModel = {
         },
         Mask: {
             description: 'sanity roll-----   4+: put on or take off the mask(put on : gain 2 knowledge and lose 2 sanity|| take off: gain 2 sanity and lose 2 knowledge ), 3-0 : Cant use mask this turn ',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'A somber mask to hide your intentions',
             use: ['mask'],
             ifLost: false,
@@ -2385,7 +2583,7 @@ const gameModel = {
         },
         HollySymbol: {
             description: 'Gain 2 sanity  ',
-            action: ['item','knowledge-Up-1','sanity-Up-2'],
+            action: ['item', 'knowledge-Up-1', 'sanity-Up-2'],
             flavorText: 'A symbol of calm in an upsetting world',
             use: ['holySymbol'],
             ifLost: ['sanity-Down-2'],
@@ -2403,7 +2601,7 @@ const gameModel = {
         },
         Dog: {
             description: 'Gain 1 Might and 1 Sanity',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: '',
             use: ['dog'],
             ifLost: 'lose 1 sanity and 1 might ',
@@ -2413,7 +2611,7 @@ const gameModel = {
         },
         CrystalBall: {
             description: ' knowledge roll --------   4+ : Search Event or Item cards and put it on the top of the deck, 1-3 : You avert your eyes and lose 1 Sanity, 0 : You stare into hell, lose 2 Sanity',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'Hazy images appear in the glass....',
             use: ['crystalBall'],
             ifLost: false,
@@ -2440,7 +2638,7 @@ const gameModel = {
     OmenMaster: {
         SpiritBoard: {
             description: 'Before moving you may look at the top tile ',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'A board with letters and numbers to call the dead...',
             use: ['isHaunt?', 'if haunt then', 'if not you may look at the top of the tiles, store that in the next tile spot on the game.'],
             ifLost: false,
@@ -2448,7 +2646,7 @@ const gameModel = {
         },
         Spear: {
             description: 'You roll 2 extra dice when making a Might roll with this weapon (max 8 dice)  ',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'A weapon pulsing with power...',
             use: ['spear'],
             ifLost: false,
@@ -2456,7 +2654,7 @@ const gameModel = {
         },
         Skull: {
             description: 'If you take mental damage you can take it ALL as physical instead',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'A skull, cracked and missing teeth....',
             use: ['skull'],
             ifLost: false,
@@ -2464,7 +2662,7 @@ const gameModel = {
         },
         Ring: {
             description: 'If you attack an opponent that has a sanity you can roll with sanity rather than might and they take mental damage not physical ',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'A battered ring with an incomprehensible inscription...',
             use: ['ring'],
             ifLost: false,
@@ -2480,7 +2678,7 @@ const gameModel = {
         },
         Mask: {
             description: 'sanity roll-----   4+: put on or take off the mask(put on : gain 2 knowledge and lose 2 sanity|| take off: gain 2 sanity and lose 2 knowledge ), 3-0 : Cant use mask this turn ',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'A somber mask to hide your intentions',
             use: ['mask'],
             ifLost: false,
@@ -2515,7 +2713,7 @@ const gameModel = {
         },
         Dog: {
             description: 'Gain 1 Might and 1 Sanity',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: '',
             use: ['dog'],
             ifLost: 'lose 1 sanity and 1 might ',
@@ -2525,7 +2723,7 @@ const gameModel = {
         },
         CrystalBall: {
             description: ' knowledge roll --------   4+ : Search Event or Item cards and put it on the top of the deck, 1-3 : You avert your eyes and lose 1 Sanity, 0 : You stare into hell, lose 2 Sanity',
-            action: ['item','knowledge-Up-2'],
+            action: ['item', 'knowledge-Up-2'],
             flavorText: 'Hazy images appear in the glass....',
             use: ['crystalBall'],
             ifLost: false,
@@ -2545,7 +2743,7 @@ const gameModel = {
             description: 'You are bitten by a mysterious shadow, might roll to save, you must beat ',
             action: ['attack-might-4'],                                                    // might 4 attack roll defendable, 
             flavorText: 'A growl, then sent of death. Pain. Darkness.Gone',
-            use:['bite'],
+            use: ['bite'],
             ifLost: false,
             companion: false
         }

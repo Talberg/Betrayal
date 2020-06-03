@@ -158,6 +158,10 @@ function RightDoor(props) {
             let newRoomObject = index[Array[newRoomIndex]]
             let newRoomsArray = Array.filter(data => data !== chosenRoom)
             console.log(newRoomObject)
+            let events = props.rooms.Event
+            let eventsArray = props.rooms.EventArray
+            let items= props.rooms.items
+            let itemsArray = props.rooms.ItemArray
 
             if (newRoomObject.doors === 1) {
                 let newDoors = 'l'
@@ -212,31 +216,22 @@ function RightDoor(props) {
 
                     }
                     if(newRoomObject.card==='e'){
-                         let omens = props.rooms.Omen
-                        let omensArray = props.rooms.OmenArray
-                        let omenIndex = getRandomInt(omensArray.length)
-                        let max = omensArray.length - 1
-                        let randomOmenCard = omensArray[omenIndex]
-                        let card = omens[randomOmenCard]
+                        let Index = getRandomInt(eventsArray.length -1)
+                        
+                        let randomEventCard = eventsArray[Index]
+                        let card = events[randomEventCard]
                         let cardObj =
                         {
                             ...card,
-                             display: 'shown',
-                            type:'Omen',
-                            title:randomOmenCard,
+                            display: 'shown',
+                            type: 'Event',
+                            title: randomEventCard,
                         }
+                        let newEventArray = eventsArray.filter(data => data !== randomEventCard)
 
-
-
-
-
-
-
-
-                        let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
                         setRooms({
                             ...props.rooms,
-                            OmenArray: newOmenArray,
+                            EventArray: newEventArray,
                             currentCard: cardObj,
                             GroundFloorRoomsArray: newRoomsArray,
                             open: {
@@ -411,31 +406,22 @@ function RightDoor(props) {
 
                    }
                     if(newRoomObject.card==='e'){
-                        let omens = props.rooms.Omen
-                       let omensArray = props.rooms.OmenArray
-                       let omenIndex = getRandomInt(omensArray.length)
-                       let max = omensArray.length - 1
-                       let randomOmenCard = omensArray[omenIndex]
-                       let card = omens[randomOmenCard]
-                       let cardObj =
-                       {
-                           ...card,
+                        let Index = getRandomInt(eventsArray.length -1)
+                        
+                        let randomEventCard = eventsArray[Index]
+                        let card = events[randomEventCard]
+                        let cardObj =
+                        {
+                            ...card,
                             display: 'shown',
-                           type:'Omen',
-                           title:randomOmenCard,
-                       }
+                            type: 'Event',
+                            title: randomEventCard,
+                        }
+                        let newEventArray = eventsArray.filter(data => data !== randomEventCard)
 
-
-
-
-
-
-
-
-                       let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
                        setRooms({
                         ...props.rooms,
-                        OmenArray: newOmenArray,
+                        EventArray: newEventArray,
                         currentCard: cardObj,
                         GroundFloorRoomsArray: newRoomsArray,
                         open: {
@@ -566,31 +552,22 @@ function RightDoor(props) {
 
                    }
                     if(newRoomObject.card==='e'){
-                        let omens = props.rooms.Omen
-                       let omensArray = props.rooms.OmenArray
-                       let omenIndex = getRandomInt(omensArray.length)
-                       let max = omensArray.length - 1
-                       let randomOmenCard = omensArray[omenIndex]
-                       let card = omens[randomOmenCard]
-                       let cardObj =
-                       {
-                           ...card,
+                        let Index = getRandomInt(eventsArray.length -1)
+                        
+                        let randomEventCard = eventsArray[Index]
+                        let card = events[randomEventCard]
+                        let cardObj =
+                        {
+                            ...card,
                             display: 'shown',
-                           type:'Omen',
-                           title:randomOmenCard,
-                       }
+                            type: 'Event',
+                            title: randomEventCard,
+                        }
+                        let newEventArray = eventsArray.filter(data => data !== randomEventCard)
 
-
-
-
-
-
-
-
-                       let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
                        setRooms({
                         ...props.rooms,
-                        OmenArray: newOmenArray,
+                        EventArray: newEventArray,
                         currentCard: cardObj,
                         GroundFloorRoomsArray: newRoomsArray,
                         open: {
@@ -726,31 +703,22 @@ function RightDoor(props) {
 
                    }
                     if(newRoomObject.card==='e'){
-                        let omens = props.rooms.Omen
-                       let omensArray = props.rooms.OmenArray
-                       let omenIndex = getRandomInt(omensArray.length)
-                       let max = omensArray.length - 1
-                       let randomOmenCard = omensArray[omenIndex]
-                       let card = omens[randomOmenCard]
-                       let cardObj =
-                       {
-                           ...card,
+                        let Index = getRandomInt(eventsArray.length -1)
+                        
+                        let randomEventCard = eventsArray[Index]
+                        let card = events[randomEventCard]
+                        let cardObj =
+                        {
+                            ...card,
                             display: 'shown',
-                           type:'Omen',
-                           title:randomOmenCard,
-                       }
+                            type: 'Event',
+                            title: randomEventCard,
+                        }
+                        let newEventArray = eventsArray.filter(data => data !== randomEventCard)
 
-
-
-
-
-
-
-
-                       let newOmenArray = omensArray.filter(data => data !== randomOmenCard)
                        setRooms({
                         ...props.rooms,
-                        OmenArray: newOmenArray,
+                        EventArray: newEventArray,
                         currentCard: cardObj,
                         GroundFloorRoomsArray: newRoomsArray,
                         open: {

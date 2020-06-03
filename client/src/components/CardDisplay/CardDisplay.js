@@ -25,6 +25,9 @@ function CardDisplay(props){
                
                let newItemArray = props.rooms.players[player].item
                let newKnowledge = props.rooms.players[player].character.knowledgeIndex
+               let newMight = props.rooms.players[player].character.mightIndex
+               let newSpeed = props.rooms.players[player].character.speedIndex
+               let newSanity = props.rooms.players[player].character.sanityIndex
                
                
                
@@ -70,6 +73,113 @@ function CardDisplay(props){
                         if(actionArray[1]==='Down'){
                             console.log(` ${player} knowledge goes down by  ${actionArray[2]}`)
                         }
+                    }
+                    if(actionArray[0]==='might'){
+                      
+                        if(actionArray[1]==='Up'){
+                            console.log(` ${player} ${actionArray[0]} goes up by  ${actionArray[2]}`)
+                            //make knowledge on the players character needs to go up 
+                            newMight = (parseInt(newMight) + parseInt(actionArray[2]))
+                            console.log(newMight)
+                            let mightIndex = newMight
+                            console.log(mightIndex)
+                            props.changeState(
+                                {
+                                    ...props.rooms,
+                                    currentCard :closedCard,
+                                    players: {...props.rooms.players , 
+                                        [player] : {...props.rooms.players[player],  item:newItemArray, 
+                                        character:{
+                                            ...props.rooms.players[player].character,
+                                            mightIndex:mightIndex
+                                        }
+                                        } }
+            
+                                }
+                            )
+
+                            console.log(props.rooms.players[player].character.mightIndex)
+                           
+
+                        }
+                        if(actionArray[1]==='Down'){
+                            console.log(` ${player} knowledge goes down by  ${actionArray[2]}`)
+                        }
+                    }
+                    if(actionArray[0]==='speed'){
+                      
+                        if(actionArray[1]==='Up'){
+                            console.log(` ${player} ${actionArray[0]} goes up by  ${actionArray[2]}`)
+                            //make knowledge on the players character needs to go up 
+                            newSpeed = (parseInt(newSpeed) + parseInt(actionArray[2]))
+                            console.log(newSpeed)
+                            let speedIndex = newSpeed
+                            console.log(speedIndex)
+                            props.changeState(
+                                {
+                                    ...props.rooms,
+                                    currentCard :closedCard,
+                                    players: {...props.rooms.players , 
+                                        [player] : {...props.rooms.players[player],  item:newItemArray, 
+                                        character:{
+                                            ...props.rooms.players[player].character,
+                                           speedIndex:speedIndex
+                                        }
+                                        } }
+            
+                                }
+                            )
+
+                            console.log(props.rooms.players[player].character.knowledgeIndex)
+                           
+
+                        }
+                        if(actionArray[1]==='Down'){
+                            console.log(` ${player} knowledge goes down by  ${actionArray[2]}`)
+                        }
+                    }
+                    if(actionArray[0]==='sanity'){
+                      
+                        if(actionArray[1]==='Up'){
+                            console.log(` ${player} ${actionArray[0]} goes up by  ${actionArray[2]}`)
+                            //make knowledge on the players character needs to go up 
+                            newSanity = (parseInt(newSpeed) + parseInt(actionArray[2]))
+                            console.log(newSanity)
+                            let sanityIndex = newSanity
+                            console.log(sanityIndex)
+                            props.changeState(
+                                {
+                                    ...props.rooms,
+                                    currentCard :closedCard,
+                                    players: {...props.rooms.players , 
+                                        [player] : {...props.rooms.players[player],  item:newItemArray, 
+                                        character:{
+                                            ...props.rooms.players[player].character,
+                                           sanityIndex:sanityIndex
+                                        }
+                                        } }
+            
+                                }
+                            )
+
+                            console.log(props.rooms.players[player].character.knowledgeIndex)
+                           
+
+                        }
+                        if(actionArray[1]==='Down'){
+                            console.log(` ${player} knowledge goes down by  ${actionArray[2]}`)
+                        }
+                    }
+                    else{
+                        props.changeState(
+                            {
+                                ...props.rooms,
+                                currentCard :closedCard,
+                              
+        
+                            }
+                        )
+
                     }
 
                     console.log(actionArray[1])
