@@ -3,6 +3,7 @@ import './CardDisplay.scss'
 import API from '../../utils/API'
 
 function CardDisplay(props){
+    let rollFunction = API.roll
     let currentCard = props.rooms.currentCard
     let closedCard = {...props.rooms.currentCard , display:'hidden'}
     function closeCard (){
@@ -22,7 +23,8 @@ function CardDisplay(props){
         console.log(props.user.user.email)
         playerKeys.map( player=>{
             if (props.user.user.email === props.rooms.players[player].email) {
-               
+               let character = props.rooms.players[player].character 
+               let might = character.might[character.mightIndex]
                let newItemArray = props.rooms.players[player].item
                let newKnowledge = props.rooms.players[player].character.knowledgeIndex
                let newMight = props.rooms.players[player].character.mightIndex
@@ -36,11 +38,16 @@ function CardDisplay(props){
                
                
                 currentCard.action.map(action =>{
-                    console.log(action)
+                    console.log(rollFunction(9))
+                    newMight = (parseInt(newMight) + parseInt(1))
+                        console.log(newMight)
+                        let mightIndex = newMight
+                        console.log(mightIndex)
+                    
                     if (action === 'item'){
-                        console.log('made it to the item')
-                        
-                        newItemArray.push(currentCard)}
+                        console.log('made it to the item') 
+                        newItemArray.push(currentCard)
+                    }
                     let actionArray = action.split('-')
                     if(actionArray[0]==='knowledge'){
                       
@@ -59,7 +66,8 @@ function CardDisplay(props){
                                         [player] : {...props.rooms.players[player],  item:newItemArray, 
                                         character:{
                                             ...props.rooms.players[player].character,
-                                            knowledgeIndex:knowledgeIndex
+                                            knowledgeIndex:knowledgeIndex,
+                                            mightIndex:mightIndex
                                         }
                                         } }
             
@@ -169,6 +177,45 @@ function CardDisplay(props){
                         if(actionArray[1]==='Down'){
                             console.log(` ${player} knowledge goes down by  ${actionArray[2]}`)
                         }
+                    }
+                    if(action === 'graveDirt'){
+                        //player might roll of 4 or greater is needed to gain 1 might
+                        //if roll < 4 then  take one point of physical damage every start of the turn.  do the item function here 
+                        //physical damage selector component needs to be built out 
+                      
+                       let mightRoll =  rollFunction(might)
+                       if(mightRoll < 4){
+                           //make the player take damage 1 physical damage 
+                       }
+                       else{
+                        newMight = (parseInt(newMight) + parseInt(1))
+                        console.log(newMight)
+                        let mightIndex = newMight
+                        console.log(mightIndex)
+                        props.changeState(
+                            {
+                                ...props.rooms,
+                                currentCard :closedCard,
+                                players: {...props.rooms.players , 
+                                    [player] : {...props.rooms.players[player],  item:newItemArray, 
+                                    character:{
+                                        ...props.rooms.players[player].character,
+                                        mightIndex:mightIndex
+                                    }
+                                    } }
+        
+                            }
+                        )
+
+                       }
+                       
+
+
+                    
+
+
+
+
                     }
                     else{
                         props.changeState(

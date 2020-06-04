@@ -60,19 +60,36 @@ export default {
     return(axios.post(`/api/games${id}`, data))
   },
   roll(multiplier){
+    if(multiplier > 8 ){
+      multiplier = 8
+    }
     //roll x number of dice then return the 
     let die = [0,1,2,0,1,2]
     let rollArray = []
-    let rollTotal= rollArray.reduce((a, b) => a + b, 0)
+    let rollTotal= 0
+    let i
     
-
     function rolldie() {
       let index=  Math.floor(Math.random() * Math.floor(6));
       return die[index]
     }
+    let rollCount = 0
+            for(i=0; i< multiplier ; i++){
+              let roll = rolldie()
+              console.log(`Roll #${i+1}: ${roll}`)
+              rollArray.push(roll)
+              rollTotal = rollTotal + roll
+              
+
+            }
+
+            console.log(rollCount)
+
+    return rollTotal
     // for loop that will run as many times as the mulitplier
 
-    for (let i=0; i>= multiplier; i++){
+    for (let i=1; i>= multiplier; i++){
+
       console.log(i)
      let roll =  rolldie()
      rollArray.push(roll)
