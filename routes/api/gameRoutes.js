@@ -177,7 +177,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -188,7 +188,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -199,7 +199,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -210,7 +210,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -221,7 +221,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -232,7 +232,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -243,7 +243,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -254,7 +254,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -265,7 +265,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -276,7 +276,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -287,7 +287,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -298,7 +298,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -309,7 +309,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -320,7 +320,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -331,7 +331,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -342,7 +342,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -353,7 +353,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -364,7 +364,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -375,7 +375,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -386,7 +386,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -397,7 +397,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -408,7 +408,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -419,7 +419,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -430,7 +430,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -441,7 +441,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -452,7 +452,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -463,7 +463,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -474,7 +474,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -485,7 +485,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -496,7 +496,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -507,7 +507,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -518,7 +518,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -529,7 +529,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -540,7 +540,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -551,7 +551,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -562,7 +562,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -573,7 +573,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -584,7 +584,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -595,7 +595,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -606,7 +606,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -617,7 +617,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -628,7 +628,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -639,7 +639,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -650,7 +650,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -661,7 +661,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -672,7 +672,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -683,7 +683,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -694,7 +694,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -705,7 +705,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -716,7 +716,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -727,7 +727,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -738,7 +738,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -749,7 +749,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -760,7 +760,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -771,7 +771,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -782,7 +782,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -793,7 +793,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -804,7 +804,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -815,7 +815,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -826,7 +826,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -837,7 +837,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -848,7 +848,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -859,7 +859,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -870,7 +870,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -881,7 +881,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -892,7 +892,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -903,7 +903,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -914,7 +914,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -925,7 +925,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -936,7 +936,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -947,7 +947,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -958,7 +958,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -969,7 +969,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -980,7 +980,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -991,7 +991,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1002,7 +1002,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1013,7 +1013,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1024,7 +1024,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1035,7 +1035,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1046,7 +1046,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1057,7 +1057,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1068,7 +1068,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1079,7 +1079,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1090,7 +1090,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1101,7 +1101,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1112,7 +1112,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1123,7 +1123,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1134,7 +1134,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1145,7 +1145,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1156,7 +1156,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1167,7 +1167,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1178,7 +1178,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1189,7 +1189,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1200,7 +1200,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1211,7 +1211,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1222,7 +1222,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1233,7 +1233,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1244,7 +1244,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1255,7 +1255,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1266,7 +1266,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1277,7 +1277,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1288,7 +1288,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1299,7 +1299,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1310,7 +1310,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1321,7 +1321,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1332,7 +1332,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1343,7 +1343,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1354,7 +1354,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1365,7 +1365,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1376,7 +1376,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1387,7 +1387,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1398,7 +1398,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1409,7 +1409,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1420,7 +1420,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1431,7 +1431,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1442,7 +1442,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1453,7 +1453,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1464,7 +1464,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1475,7 +1475,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1486,7 +1486,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1497,7 +1497,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1508,7 +1508,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1519,7 +1519,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1530,7 +1530,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1541,7 +1541,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1552,7 +1552,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1563,7 +1563,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1574,7 +1574,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1585,7 +1585,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1596,7 +1596,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1607,7 +1607,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1618,7 +1618,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1629,7 +1629,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1640,7 +1640,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1651,7 +1651,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1662,7 +1662,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1673,7 +1673,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1684,7 +1684,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1695,7 +1695,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1706,7 +1706,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1717,7 +1717,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1728,7 +1728,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1739,7 +1739,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1750,7 +1750,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1761,7 +1761,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1772,7 +1772,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1783,7 +1783,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1794,7 +1794,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1805,7 +1805,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1816,7 +1816,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1827,7 +1827,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1838,7 +1838,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1849,7 +1849,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1860,7 +1860,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1871,7 +1871,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1882,7 +1882,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1893,7 +1893,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1904,7 +1904,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1915,7 +1915,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1926,7 +1926,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1937,7 +1937,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1948,7 +1948,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1959,7 +1959,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1970,7 +1970,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -1981,7 +1981,7 @@ const gameModel = {
             items: [],
             players: [],
             monsters: [],
-            exit: false,
+            token:[],
             endTurn: false,
             doors: 4,
             numDoors: 4
@@ -2161,7 +2161,7 @@ const gameModel = {
             name: "Abandon Room",
             doors: 4,
             card: "o",
-            exit: false,
+            token:[],
             entry: ''
 
         },
@@ -2169,7 +2169,7 @@ const gameModel = {
             name: "Ball Room",
             doors: 4,
             card: 'e',
-            exit: false,
+            token:[],
             entry: ''
 
         },
@@ -2177,15 +2177,15 @@ const gameModel = {
             name: "Bloody Room",
             doors: 4,
             card: 'i',
-            exit: 'i',
-            entry: ''
+            token:['bloodRoom'],      
+         entry: ''
 
         },
         CharedRoom: {
             name: "Charred Room",
             doors: 4,
             card: 'o',
-            exit: false,
+            token:[],
             entry: ''
 
         },
@@ -2193,8 +2193,8 @@ const gameModel = {
             name: "Collapsed Room",
             doors: 4,
             card: false,
-            exit: '',
-            entry: 'speed of 5+ or fall to basement',
+            token:['collapsedRoom']  ,        
+            entry: '',
             collapsed: true
 
 
@@ -2203,7 +2203,7 @@ const gameModel = {
             name: "Creaky Hallway",
             doors: 4,
             card: false,
-            exit: false,
+            token:[],
             entry: ''
 
         },
@@ -2211,7 +2211,7 @@ const gameModel = {
             name: "Dusty Hallway",
             doors: 4,
             card: false,
-            exit: false,
+            token:[],
             entry: ''
 
         },
@@ -2219,7 +2219,7 @@ const gameModel = {
             name: "Junk Room",
             doors: 4,
             card: 'o',
-            exit: 'junkRoom',
+            token:['junkRoom'] ,
             entry: ''
 
         },
@@ -2227,84 +2227,84 @@ const gameModel = {
             name: 'Game Room',
             doors: 3,
             card: 'e',
-            exit: false,
+            token:[],
             entry: ''
         },
         Patio: {
             name: 'Patio',
             doors: 3,
             card: 'e',
-            exit: false,
+            token:[],
             entry: ''
         },
         DinningRoom: {
             name: 'Dinning Room',
             doors: 2,
             card: 'o',
-            exit: false,
+            token:[],
             entry: ''
         },
         Gardens: {
             name: 'Gardens',
             doors: 2,
             card: 'e',
-            exit: false,
+            token:[],
             entry: ''
         },
         Kitchen: {
             name: 'Kitchen',
             doors: 2,
             card: 'o',
-            exit: false,
+            token:[],
             entry: ''
         },
         Library: {
             name: 'Library',
             doors: 2,
             card: 'e',
-            exit: false,
+            token:[],
             entry: ''
         },
         OrganRoom: {
             name: 'Dinning Room',
             doors: 2,
             card: 'e',
-            exit: false,
+            token:[],
             entry: ''
         },
         StatuaryCorridor: {
             name: 'Statuary Corridor',
             doors: 2,
             card: 'e',
-            exit: false,
+            token:[],
             entry: ''
         },
         CoalChute: {
             name: 'Coal Chute',
             doors: 1,
             card: false,
-            exit: false,
+            token:[],
             entry: 'one way to basement'
         },
         Chapel: {
             name: 'Chapel',
             doors: 1,
             card: 'e',
-            exit: false,
+            token:[],
             entry: ''
         },
         Conservatory: {
             name: 'Conservatory',
             doors: 1,
             card: 'e',
-            exit: false,
+            token:[],
             entry: ''
         },
         Graveyard: {
             name: 'Graveyard',
             doors: 1,
             card: 'e',
-            exit: false,
+            token:[],
             entry: ''
         },
 
@@ -2328,7 +2328,6 @@ const gameModel = {
     EventArray: [
         'BloodyVision',
         "BurningMan",
-        'ClosetDoor',
         'CreepyPuppet',
         'CreepyCrawlies',
         'Debris',
@@ -2337,6 +2336,19 @@ const gameModel = {
         'FootSteps',
         'Funeral',
         'GraveDirt',
+        'JonahsTurn',
+        'Groundskeeper',
+        'NightView',
+        'PhoneCall',
+        'Rotten',
+        'SomethingHidden',
+        'SomethingSlimy',
+        'Spider',
+        'TheVoice',
+        'AngryBeing',
+        'Webs',
+        'Skeletons',
+        "aMomentOfHope"
 
     ],
     Event: {
@@ -2420,6 +2432,112 @@ const gameModel = {
             ifLost: false,
             companion: false,
         },
+        JonahsTurn:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['jonahsTurn'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        Groundskeeper:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['groundskeeper'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        NightView:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['nightView'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        PhoneCall:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['phoneCall'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        Rotten:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['rotten'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        SomethingHidden:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['somethingHidden'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        SomethingSlimy:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['somethingSlimy'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        Spider:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['spider'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        TheVoice:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['theVoice'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        AngryBeing:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['angryBeing'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        Webs:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['webs'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        Skeletons:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['skeletons'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+        aMomentOfHope:
+        {
+            description: 'You must attempt a might roll|| 4+ :  might up 1  || 0-3: 1 point of physical damage at he start of each of yor turns, gain +1 to a trait or end your turn in one of the these rooms :Balcony, Gardens,Graveyard,Larder,Patio,or Tower ',
+            action: ['aMomentOfHope'],
+            flavorText: 'This room is covers in a thick layer of dirt. You cough as it gets on your skin and in your lungs',
+            ifLost: false,
+            companion: false,
+        },
+
+
 
 
     },
@@ -2628,7 +2746,7 @@ const gameModel = {
         },
         Bite: {
             description: 'You are bitten by a mysterious shadow, might roll to save, you must beat ',
-            action: ['attack-might-4'],                                                    // might 4 attack roll defendable, 
+            action: ['bite'],                                                    // might 4 attack roll defendable, 
             flavorText: 'A growl, then sent of death. Pain. Darkness.Gone',
             ifLost: false,
             companion: false

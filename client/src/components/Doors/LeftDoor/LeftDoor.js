@@ -76,6 +76,8 @@ function LeftDoor(props) {
     //function that will make the player move left and is called every time the left button is clicked
     function goLeft() {
 
+        let Array = props.rooms.GroundFloorRoomsArray
+
         let splitX = props.x.split('x')
         let newX = `x${splitX[1] - 1}`
         //new coor of the room that the player is moving to 
@@ -87,6 +89,11 @@ function LeftDoor(props) {
 
         //if the new room is not open then the get new 
         if (!opened.open) {
+            console.log(props.rooms.GroundFloorRoomsArray.length)
+            if(props.rooms.GroundFloorRoomsArray.length){
+
+            }
+
             randomGroundFloor(props)
 
 
@@ -98,6 +105,7 @@ function LeftDoor(props) {
 
         function moveLeft(props) {
             let movementSpeed = playersObj[playerKey].movementSpeed
+            let Array = props.rooms.GroundFloorRoomsArray
             let newMovementSpeed = movementSpeed - 1
 
             const setRooms = props.changeState
@@ -107,7 +115,6 @@ function LeftDoor(props) {
             let max = Object.keys(props.rooms.GroundFloorRooms).length - 1
             let newRoomIndex = getRandomInt(max)
             let index = props.rooms.GroundFloorRooms
-            let Array = props.rooms.GroundFloorRoomsArray
             let newRoomObject = index[Array[newRoomIndex]]
             setRooms({
                 ...props.rooms,
@@ -132,7 +139,6 @@ function LeftDoor(props) {
             const GroundFloor = props.rooms.GroundFloor
             const roomStuff = GroundFloor[newRoom]
             let index = props.rooms.GroundFloorRooms
-            let Array = props.rooms.GroundFloorRoomsArray
             let max = Array.length - 1
             let newRoomIndex = getRandomInt(max)
             let chosenRoom = Array[newRoomIndex].toString()
@@ -141,8 +147,6 @@ function LeftDoor(props) {
             let omens = props.rooms.Omen
             console.log(` max :${max}`)
             console.log(`Array${Array}`)
-            console.log(newRoomIndex)
-            console.log(newRoomObject)
             let events = props.rooms.Event
             let eventsArray = props.rooms.EventArray
             let items= props.rooms.items
@@ -209,7 +213,7 @@ function LeftDoor(props) {
                                     numDoors: newRoomObject.doors,
                                     doors: newDoors,
                                     name: newRoomObject.name,
-                                    entry: 't'
+                                    entry: 'r'
                                     , card: newRoomObject.card
 
                                 }
@@ -255,7 +259,7 @@ function LeftDoor(props) {
                                     numDoors: newRoomObject.doors,
                                     doors: newDoors,
                                     name: newRoomObject.name,
-                                    entry: 't'
+                                    entry: 'r'
                                     , card: newRoomObject.card
 
                                 }
@@ -301,7 +305,7 @@ function LeftDoor(props) {
                                     numDoors: newRoomObject.doors,
                                     doors: newDoors,
                                     name: newRoomObject.name,
-                                    entry: 't'
+                                    entry: 'r'
                                     , card: newRoomObject.card
 
                                 }
@@ -329,7 +333,7 @@ function LeftDoor(props) {
                                 numDoors: newRoomObject.doors,
                                 doors: newDoors,
                                 name: newRoomObject.name,
-                                entry: 't'
+                                entry: 'r'
                                 , card: newRoomObject.card
 
                             }
